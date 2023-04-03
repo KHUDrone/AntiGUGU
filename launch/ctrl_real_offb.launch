@@ -24,11 +24,11 @@
 	<param name="mocap/use_pose" value="false"/>
 </node>
 
-<node name="mavsafety" pkg="mavros" type="mavsafety" output="screen" args="arm">
+<!-- node name="mavsafety" pkg="mavros" type="mavsafety" output="screen" args="arm">
 </node>
 
 <node name="mavsys mode" pkg="mavros" type="mavsys" output="screen" args="mode -c OFFBOARD">
-</node>
+</node> -->
 
 <node name="pub_move_drone_node" pkg="greenwing" type="pub_move_drone_node" output="screen">
 </node>
