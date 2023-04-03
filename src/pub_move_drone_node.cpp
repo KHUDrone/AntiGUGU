@@ -24,6 +24,7 @@ mavros_msgs::State current_state;
 bool alt_flag = false;
 
 void state_cb(const mavros_msgs::State::ConstPtr msg){
+    ROS_INFO("Connection Alived!");
     current_state = *msg;
 }
 
