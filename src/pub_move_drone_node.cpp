@@ -12,8 +12,8 @@
 #include <sensor_msgs/NavSatFix.h>
 
 //publisher
-geographic_msgs::GeoPoseStamped target_pose; //for global
-//geometry_msgs::PoseStamped target_pose; //for local
+//geographic_msgs::GeoPoseStamped target_pose; //for global
+geometry_msgs::PoseStamped target_pose; //for local
 mavros_msgs::PositionTarget rotate_pose;
 
 sensor_msgs::NavSatFix current_pose;
@@ -27,19 +27,19 @@ void state_cb(const mavros_msgs::State::ConstPtr msg){
     current_state = *msg;
 }
 
-void target_cb(const geographic_msgs::GeoPoseStamped msg){
-    target_pose = msg;
-    alt_flag = false;
-    //ROS_INFO("MOVE!\n");
-    ROS_INFO("Received(lat,long,alt): %4.2f, %4.2f, %4.2f\n",msg.pose.position.latitude, msg.pose.position.longitude, msg.pose.position.altitude);
-}
+// void target_cb(const geographic_msgs::GeoPoseStamped msg){
+//     target_pose = msg;
+//     alt_flag = false;
+//     //ROS_INFO("MOVE!\n");
+//     ROS_INFO("Received(lat,long,alt): %4.2f, %4.2f, %4.2f\n",msg.pose.position.latitude, msg.pose.position.longitude, msg.pose.position.altitude);
+// }
 
-void target_alt_cb(const geographic_msgs::GeoPoseStamped msg){
-    target_pose = msg;
-    alt_flag = true;
-    //ROS_INFO("MOVE!\n");
-    ROS_INFO("Received(alt): %4.2f\n", msg.pose.position.altitude);
-}
+// void target_alt_cb(const geographic_msgs::GeoPoseStamped msg){
+//     target_pose = msg;
+//     alt_flag = true;
+//     //ROS_INFO("MOVE!\n");
+//     ROS_INFO("Received(alt): %4.2f\n", msg.pose.position.altitude);
+// }
 /*
 void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
     target_pose = *msg;
@@ -60,13 +60,13 @@ int main(int argc, char **argv)
 
 	//publishers
    //ros::Publisher move_pub = n.advertise<mavros_msgs::GlobalPositionTarget>("mavros/setpoint_raw/global",10);
-   ros::Publisher move_pub = n.advertise <geographic_msgs::GeoPoseStamped> ("mavros/setpoint_position/global", 1);
-   //ros::Publisher move_pub = n.advertise <geometry_msgs::PoseStamped> ("mavros/setpoint_position/local", 10); //for local
+   //ros::Publisher move_pub = n.advertise <geographic_msgs::GeoPoseStamped> ("mavros/setpoint_position/global", 1);
+   ros::Publisher move_pub = n.advertise <geometry_msgs::PoseStamped> ("mavros/setpoint_position/local", 10); //for local
    //ros::Publisher rotate_pub = n.advertise <mavros_msgs::PositionTarget> ("mavros/setpoint_raw/local", 10);
 
    //subscribers
-   ros::Subscriber target_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting",1,target_cb); //for global
-   ros::Subscriber target_alt_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting_alt",1,target_alt_cb);
+   //ros::Subscriber target_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting",1,target_cb); //for global
+   //ros::Subscriber target_alt_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting_alt",1,target_alt_cb);
    //ros::Subscriber target_sub = n.subscribe<geometry_msgs::PoseStamped>("targeting",10,target_cb);
    ros::Subscriber state_sub = n.subscribe<mavros_msgs::State>("mavros/state", 1, state_cb);
    ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
@@ -85,12 +85,12 @@ int main(int argc, char **argv)
     target_pose.header.stamp = ros::Time::now();
     //target_pose.header.frame_id = 1;
     for (int i = 0;i<10;i++){
-		target_pose.pose.position.latitude = current_pose.latitude;
-		target_pose.pose.position.longitude = current_pose.longitude;
-		target_pose.pose.position.altitude = current_pose.altitude + 5;
-		//target_pose.pose.position.x = 0;
-		//target_pose.pose.position.y = 0;
-		//target_pose.pose.position.z = 560;
+		// target_pose.pose.position.latitude = current_pose.latitude;
+		// target_pose.pose.position.longitude = current_pose.longitude;
+		// target_pose.pose.position.altitude = current_pose.altitude + 5;
+		target_pose.pose.position.x = 0;
+		target_pose.pose.position.y = 0;
+		target_pose.pose.position.z = 2;
     ros::spinOnce();
     rate.sleep();
 	}
@@ -123,7 +123,7 @@ int main(int argc, char **argv)
    ros::Time last_request = ros::Time::now();
 
    while(ros::ok()){
-      ROS_INFO("Target(lat,long,alt): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.latitude, target_pose.pose.position.longitude, target_pose.pose.position.altitude);
+       ROS_INFO("Target(lat,long,alt): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.latitude, target_pose.pose.position.longitude, target_pose.pose.position.altitude);
        target_pose.header.stamp = ros::Time::now();
        //rotate_pose.header.stamp = ros::Time::now();
        target_pose.header.frame_id = 1;
@@ -168,10 +168,10 @@ int main(int argc, char **argv)
 	   //rotate_pose.yaw=count;
 
        //move_pub.publish(target_pose);
-       if(alt_flag){
-        target_pose.pose.position.latitude = current_pose.latitude;
-		target_pose.pose.position.longitude = current_pose.longitude;
-       }
+    //    if(alt_flag){
+    //     target_pose.pose.position.latitude = current_pose.latitude;
+	// 	target_pose.pose.position.longitude = current_pose.longitude;
+    //    }
        move_pub.publish(target_pose);
        ros::spinOnce();
        rate.sleep();
