@@ -123,7 +123,7 @@ int main(int argc, char **argv)
    ros::Time last_request = ros::Time::now();
 
    while(ros::ok()){
-       ROS_INFO("Target(lat,long,alt): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x target_pose.pose.position.y, target_pose.pose.position.z);
+       ROS_INFO("Target(lat,long,alt): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
        target_pose.header.stamp = ros::Time::now();
        //rotate_pose.header.stamp = ros::Time::now();
        target_pose.header.frame_id = 1;
