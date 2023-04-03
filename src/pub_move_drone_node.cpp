@@ -114,11 +114,11 @@ int main(int argc, char **argv)
         rate.sleep();
     }
 
-    // mavros_msgs::SetMode offb_set_mode;
-    // offb_set_mode.request.custom_mode = "OFFBOARD";
+    mavros_msgs::SetMode offb_set_mode;
+    offb_set_mode.request.custom_mode = "OFFBOARD";
 
-    // mavros_msgs::CommandBool arm_cmd;
-    // arm_cmd.request.value = true;
+    mavros_msgs::CommandBool arm_cmd;
+    arm_cmd.request.value = true;
 
    ros::Time last_request = ros::Time::now();
 
