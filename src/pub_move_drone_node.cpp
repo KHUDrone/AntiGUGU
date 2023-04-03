@@ -158,8 +158,8 @@ int main(int argc, char **argv)
 		else{
 
 		   move_pub.publish(target_pose);
-		   rotate_pub.publish(rotate_pose);
-			alt_pub.publish(alt_pose);
+		   //rotate_pub.publish(rotate_pose);
+			//alt_pub.publish(alt_pose);
         }
       
 
@@ -173,8 +173,8 @@ int main(int argc, char **argv)
 	// 	target_pose.pose.position.longitude = current_pose.longitude;
     //    }
     //    move_pub.publish(target_pose);
-    //    ros::spinOnce();
-    //    rate.sleep();
+       ros::spinOnce();
+       rate.sleep();
 
    }
    return 0;
