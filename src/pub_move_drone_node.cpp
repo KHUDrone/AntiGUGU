@@ -22,6 +22,10 @@ sensor_msgs::NavSatFix current_pose;
 mavros_msgs::State current_state;
 
 bool alt_flag = false;
+const float wn = 0.10472;
+const float r = 4.0;
+int clk_count = 0;
+int time_count = 0;
 
 void state_cb(const mavros_msgs::State::ConstPtr msg){
     ROS_INFO("Connection Alived!");
@@ -157,10 +161,20 @@ int main(int argc, char **argv)
 				}
             }
 		else{
-
+            ROS_INFO("CLK: %d\n",clk_count);
+            clk_count++;
+            if(!(clk_count%2)) {
+                ROS_INFO("MOVE\n");
+                time_count++;
+                target_pose.pose.position.x = r*sin(wn*time_count);
+		        target_pose.pose.position.y = r-r*cos(wn*time_count);
+		        target_pose.pose.position.z = 2;
+            }
 		   move_pub.publish(target_pose);
+           time_count%=120;
 		   //rotate_pub.publish(rotate_pose);
 			//alt_pub.publish(alt_pose);
+            
         }
       
 
