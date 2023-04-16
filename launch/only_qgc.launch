@@ -1,0 +1,27 @@
+<launch>
+
+<!-- arg name="fcu_url" default= "udp://:14540@127.0.0.1:14557"-->
+<arg name="fcu_url" default= "/dev/ttyS0:9600" />
+<arg name="gcs_url" default="udp://:14550@192.168.200.233:14550" />
+<arg name="tgt_system" default="1" />
+<arg name="tgt_component" default="1" />
+
+<!-- node name="mavsafety" pkg="mavros" type="mavsafety" output="screen" args="arm">
+</node>
+
+<node name="mavsys mode" pkg="mavros" type="mavsys" output="screen" args="mode -c OFFBOARD">
+</node> -->
+
+<!-- node name="pub_move_drone_node" pkg="greenwing" type="pub_move_drone_node" output="screen">
+</node> -->
+
+<!-- <node name="pub_socket_client_node" pkg="greenwing" type="pub_socket_client_node.py" output="screen">
+</node>
+
+<node name="pub_route_to_target_node" pkg="greenwing" type="pub_route_to_target_node.py" output="screen">
+</node>
+
+<node name="pub_camera_node" pkg="greenwing" type="pub_camera_node.py" output="screen">
+</node> -->
+
+</launch>
