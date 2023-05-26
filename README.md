@@ -46,11 +46,7 @@
 > 현 문서에서는 자율비행에 대해서 다룹니다. 다른 기능의 설명은 해당 Submodule의 Wiki나 [**AI_Wiki_Specification**](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)을 참고해주세요.
 
 ### 1. 자율비행
-> 사전 학습된 AI 모델을 통해 사용자 입력 대화에 담긴 주제와 감정을 분석하여 지정된 레이블로 분류합니다.
-- 입력 대화를 AI 모델 훈련을 위해 tensor 형태로 만드는 데이터 인코딩을 수행합니다.
-- TFBertModel layer와 classifier layer를 쌓아 Model 제작
-- 인코딩한 데이터를 모델에 입력합니다.
-- 모델의 결과값인 확률 벡터 중 최대 값을 가리키는 요소를 추출 후, label dictionary로 label 반환합니다.
+
 
 
 ## 💻 Developers
