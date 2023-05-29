@@ -10,6 +10,7 @@ project(greenwing)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
+  gazebo_ros
   std_msgs
   message_generation
 )

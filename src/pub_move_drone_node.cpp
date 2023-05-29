@@ -135,7 +135,7 @@ int main(int argc, char **argv)
        //rotate_pose.header.frame_id = 1;
 
 
-       
+
        if( current_state.mode != "OFFBOARD" &&
             (ros::Time::now() - last_request > ros::Duration(5.0))){
             if( set_mode_client.call(offb_set_mode) &&
@@ -174,9 +174,9 @@ int main(int argc, char **argv)
            time_count%=120;
 		   //rotate_pub.publish(rotate_pose);
 			//alt_pub.publish(alt_pose);
-            
+
         }
-      
+
 
 
 	   //count+=0.01;
