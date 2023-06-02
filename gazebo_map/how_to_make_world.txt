@@ -1,0 +1,15 @@
+No Hanguel Fuck
+
+1. Go to PX4-Autopilot and command below in terminal.
+
+no_sim=1 make px4_sitl gazebo
+
+2. Make your Own Gazebo world. (like TEST.world)
+
+3. Save it as .world file.
+
+4. Command below in terminal
+
+roslaunch greenwing test_world.launch
+
+5. WP GG
