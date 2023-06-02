@@ -30,7 +30,7 @@ int time_count = 0;
 void state_cb(const mavros_msgs::State::ConstPtr msg){
     ROS_INFO("Connection Alived!");
     current_state = *msg;
-}
+} 
 
 // void target_cb(const geographic_msgs::GeoPoseStamped msg){
 //     target_pose = msg;
