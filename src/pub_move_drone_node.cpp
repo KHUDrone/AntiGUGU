@@ -11,6 +11,10 @@
 #include "geometry_msgs/Vector3Stamped.h"
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/LaserScan.h>
+
+int step = 0;
+
+
 //publisher
 //geographic_msgs::GeoPoseStamped target_pose; //for global
 geometry_msgs::PoseStamped target_pose; //for local
@@ -48,11 +52,13 @@ void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
 // }
 
 
-
 void recv_laser(const sensor_msgs::LaserScan msg){
     lidar_scan = msg;
-    ROS_INFO("Lidar Range", lidar_scan.ranges);
-    ROS_INFO("Current(angle_min,max,increment / range_min, max)", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
+    for (int i=30; i<60; i++)
+    {
+         ROS_INFO("%f",lidar_scan.ranges[i]);
+    }
+//    ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
 }
 
 void state_cb(const mavros_msgs::State::ConstPtr msg){
@@ -101,10 +107,10 @@ int main(int argc, char **argv)
     target_pose.pose.position.y = 0;
     target_pose.pose.position.z = 2;
 
-    lidar_scan.angle_max = 5;
-    lidar_scan.angle_min = -5;
-    lidar_scan.range_max = 10;
-    lidar_scan.range_min = 0.5;
+//    lidar_scan.angle_max = 5;
+//    lidar_scan.angle_min = -5;
+//    lidar_scan.range_max = 10;
+//    lidar_scan.range_min = 0.5;
 
 	//rotate_pose.yaw = 0;
 	//rotate_pose.yaw_rate = 1;
@@ -173,11 +179,54 @@ int main(int argc, char **argv)
 
         //201 --> x 5 y 6
         //201 - (4,1) --> x 1 y 4 z 1.5
-        target_pose.pose.position.x = 1;
-        target_pose.pose.position.y = 4;
-        target_pose.pose.position.z = current_pose.z + 0.1;
-        move_pub.publish(target_pose);
         
+        //takeoff
+        if(step==0){
+            target_pose.pose.position.x = 1;
+            target_pose.pose.position.y = 4;
+            target_pose.pose.position.z = 2.1;
+            move_pub.publish(target_pose);
+            if(current_pose.z>=1.8){step=1;}
+        }
+        
+        //go upside
+        if(step==1){
+            target_pose.pose.position.x = 1;
+            target_pose.pose.position.y = 4;
+            target_pose.pose.position.z = current_pose.z + 0.7;
+            move_pub.publish(target_pose);
+            //QR detection func
+            if(current_pose.z>=9.5){step=2;}
+        }
+
+        //go rightsie
+        if(step ==2){
+            target_pose.pose.position.x = 1;
+            target_pose.pose.position.y = current_pose.y-0.7;
+            target_pose.pose.position.z =9.5;
+            move_pub.publish(target_pose);
+            //QR detection func
+            if(current_pose.y<=-8){step=3;}
+        }
+
+        //go downside
+        if(step == 3){
+            target_pose.pose.position.x = 1;
+            target_pose.pose.position.y = -8;
+            target_pose.pose.position.z = current_pose.z - 0.7;
+            move_pub.publish(target_pose);
+            //QR detection func
+            if(current_pose.z<= 1.5){step=4;}
+        }
+        
+        //land on
+        if(step==4)
+        {   
+            target_pose.pose.position.x = 1;
+            target_pose.pose.position.y = -8;
+            target_pose.pose.position.z = 0;
+            move_pub.publish(target_pose);           
+        }
         //QR 검출 -> 동과 호수 => 401이면 옆으로가기, 402면 아래로 가기 시작
         //
 
