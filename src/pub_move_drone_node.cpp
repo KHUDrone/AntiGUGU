@@ -10,10 +10,10 @@
 #include "geometry_msgs/PoseStamped.h"
 #include "geometry_msgs/Vector3Stamped.h"
 #include <sensor_msgs/NavSatFix.h>
-
+#include <sensor_msgs/LaserScan.h>
 //publisher
 //geographic_msgs::GeoPoseStamped target_pose; //for global
-geometry_msgs::Point target_pose; //for local
+geometry_msgs::PoseStamped target_pose; //for local
 
 
 //subscriber
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
    //ros::Subscriber target_alt_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting_alt",1,target_alt_cb);
    //ros::Subscriber target_sub = n.subscribe<geometry_msgs::PoseStamped>("targeting",10,target_cb);
    ros::Subscriber state_sub = n.subscribe<mavros_msgs::State>("mavros/state", 1, state_cb);
-   ros::Subscriber lidar_sub = n.subscribe<sensor_msgs::LaserScan>("/laser/scan", 1, recv_laser);
+   ros::Subscriber lidar_sub = n.subscribe<sensor_msgs::LaserScan>("/laser/scan",1, recv_laser);
    //ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
    ros::Subscriber local_sub = n.subscribe<geometry_msgs::PoseStamped>("/mavros/local_position/pose", 1, local_cb);
 
@@ -166,9 +166,9 @@ int main(int argc, char **argv)
 
         //201 --> x 5 y 6
         //201 - (3,1) --> x 1 y 4 z 1.5
-        target_pose.position.x = 1;
-        target_pose.position.y = 4;
-        target_pose.position.z = 1.5;
+        target_pose.pose.position.x = 1;
+        target_pose.pose.position.y = 4;
+        target_pose.pose.position.z = 1.5;
         move_pub.publish(target_pose);
 
         //     ROS_INFO("CLK: %d\n",clk_count);
