@@ -51,6 +51,8 @@ void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
 
 void recv_laser(const sensor_msgs::LaserScan msg){
     lidar_scan = msg;
+    ROS_INFO("Lidar Range", lidar_scan.ranges);
+    ROS_INFO("Current(angle_min,max,increment / range_min, max)", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
 }
 
 void state_cb(const mavros_msgs::State::ConstPtr msg){
@@ -99,6 +101,11 @@ int main(int argc, char **argv)
     target_pose.pose.position.y = 0;
     target_pose.pose.position.z = 2;
 
+    lidar_scan.angle_max = 5;
+    lidar_scan.angle_min = -5;
+    lidar_scan.range_max = 10;
+    lidar_scan.range_min = 0.5;
+
 	//rotate_pose.yaw = 0;
 	//rotate_pose.yaw_rate = 1;
 
@@ -127,7 +134,7 @@ int main(int argc, char **argv)
    ros::Time last_request = ros::Time::now();
 
    while(ros::ok()){
-       ROS_INFO("Target(lat,long,alt): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
+       ROS_INFO("Target(x,y,z): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
        target_pose.header.stamp = ros::Time::now();
        target_pose.header.frame_id = 1;
        
@@ -165,12 +172,23 @@ int main(int argc, char **argv)
 
 
         //201 --> x 5 y 6
-        //201 - (3,1) --> x 1 y 4 z 1.5
+        //201 - (4,1) --> x 1 y 4 z 1.5
         target_pose.pose.position.x = 1;
         target_pose.pose.position.y = 4;
-        target_pose.pose.position.z = 1.5;
+        target_pose.pose.position.z = current_pose.z + 0.1;
         move_pub.publish(target_pose);
+        
+        //QR 검출 -> 동과 호수 => 401이면 옆으로가기, 402면 아래로 가기 시작
+        //
 
+        //201 - (1,1) --> x 1 y 4 z 10.5
+        // target_pose.pose.position.x = 1;
+        // target_pose.pose.position.y = 4;
+        // target_pose.pose.position.z = 10.5;
+        // move_pub.publish(target_pose);
+        
+
+        
         //     ROS_INFO("CLK: %d\n",clk_count);
         //     clk_count++;
         //     if(!(clk_count%2)) {
