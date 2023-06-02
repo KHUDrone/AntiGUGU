@@ -21,8 +21,8 @@
   <arg name="use_clock_frequency" default="false"/>
   <arg name="pub_clock_frequency" default="100"/>
   <arg name="enable_ros_network" default="true" />
-  <arg name="server_required" default="false"/>
-  <arg name="gui_required" default="false"/>
+  <arg name="server_required" default="true"/>
+  <arg name="gui_required" default="true"/>
 
   <!-- set use_sim_time flag -->
   <param name="/use_sim_time" value="$(arg use_sim_time)"/>

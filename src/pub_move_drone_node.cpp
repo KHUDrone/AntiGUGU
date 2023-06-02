@@ -13,24 +13,13 @@
 
 //publisher
 //geographic_msgs::GeoPoseStamped target_pose; //for global
-geometry_msgs::PoseStamped target_pose; //for local
-mavros_msgs::PositionTarget rotate_pose;
+geometry_msgs::Point target_pose; //for local
 
-sensor_msgs::NavSatFix current_pose;
 
 //subscriber
 mavros_msgs::State current_state;
-
-bool alt_flag = false;
-const float wn = 0.10472;
-const float r = 4.0;
-int clk_count = 0;
-int time_count = 0;
-
-void state_cb(const mavros_msgs::State::ConstPtr msg){
-    ROS_INFO("Connection Alived!");
-    current_state = *msg;
-} 
+geometry_msgs::Point current_pose;
+sensor_msgs::LaserScan lidar_scan;
 
 // void target_cb(const geographic_msgs::GeoPoseStamped msg){
 //     target_pose = msg;
@@ -53,9 +42,24 @@ void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
 }
 */
 
-void global_cb(const sensor_msgs::NavSatFix msg ){
-	current_pose = msg;
-	ROS_INFO("Current(lat,long,alt): %4.2f, %4.2f, %4.2f\n",msg.latitude, msg.longitude, msg.altitude);
+// void global_cb(const sensor_msgs::NavSatFix msg ){
+// 	current_pose = msg;
+// 	ROS_INFO("Current(lat,long,alt): %4.2f, %4.2f, %4.2f\n",msg.latitude, msg.longitude, msg.altitude);
+// }
+
+
+
+void recv_laser(const sensor_msgs::LaserScan msg){
+    lidar_scan = msg;
+}
+
+void state_cb(const mavros_msgs::State::ConstPtr msg){
+    current_state = *msg;
+} 
+
+void local_cb(const geometry_msgs::PoseStamped msg ){
+	current_pose = msg.pose.position;
+	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
 }
 
 int main(int argc, char **argv)
@@ -74,7 +78,9 @@ int main(int argc, char **argv)
    //ros::Subscriber target_alt_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting_alt",1,target_alt_cb);
    //ros::Subscriber target_sub = n.subscribe<geometry_msgs::PoseStamped>("targeting",10,target_cb);
    ros::Subscriber state_sub = n.subscribe<mavros_msgs::State>("mavros/state", 1, state_cb);
-   ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
+   ros::Subscriber lidar_sub = n.subscribe<sensor_msgs::LaserScan>("/laser/scan", 1, recv_laser);
+   //ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
+   ros::Subscriber local_sub = n.subscribe<geometry_msgs::PoseStamped>("/mavros/local_position/pose", 1, local_cb);
 
    //servicesClient
    ros::ServiceClient arming_client = n.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
@@ -83,22 +89,15 @@ int main(int argc, char **argv)
    ros::Rate rate(2);
 
     while(ros::ok() && !current_state.connected){
-        ROS_INFO("Looped!");
+        ROS_INFO("Trying to Connect...");
         ros::spinOnce();
         rate.sleep();
     }
     target_pose.header.stamp = ros::Time::now();
     //target_pose.header.frame_id = 1;
-    for (int i = 0;i<10;i++){
-		// target_pose.pose.position.latitude = current_pose.latitude;
-		// target_pose.pose.position.longitude = current_pose.longitude;
-		// target_pose.pose.position.altitude = current_pose.altitude + 5;
-		target_pose.pose.position.x = 0;
-		target_pose.pose.position.y = 0;
-		target_pose.pose.position.z = 2;
-    ros::spinOnce();
-    rate.sleep();
-	}
+    target_pose.pose.position.x = 0;
+    target_pose.pose.position.y = 0;
+    target_pose.pose.position.z = 2;
 
 	//rotate_pose.yaw = 0;
 	//rotate_pose.yaw_rate = 1;
@@ -130,12 +129,8 @@ int main(int argc, char **argv)
    while(ros::ok()){
        ROS_INFO("Target(lat,long,alt): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
        target_pose.header.stamp = ros::Time::now();
-       //rotate_pose.header.stamp = ros::Time::now();
        target_pose.header.frame_id = 1;
-       //rotate_pose.header.frame_id = 1;
-
-
-
+       
        if( current_state.mode != "OFFBOARD" &&
             (ros::Time::now() - last_request > ros::Duration(5.0))){
             if( set_mode_client.call(offb_set_mode) &&
@@ -161,33 +156,37 @@ int main(int argc, char **argv)
 				}
             }
 		else{
-            ROS_INFO("CLK: %d\n",clk_count);
-            clk_count++;
-            if(!(clk_count%2)) {
-                ROS_INFO("MOVE\n");
-                time_count++;
-                target_pose.pose.position.x = r*sin(wn*time_count);
-		        target_pose.pose.position.y = r-r*cos(wn*time_count);
-		        target_pose.pose.position.z = 2;
-            }
-		   move_pub.publish(target_pose);
-           time_count%=120;
-		   //rotate_pub.publish(rotate_pose);
-			//alt_pub.publish(alt_pose);
+
+        // 101 102 103
+        // 201 202 203
+        //     drone
+        // height of  1 floor = 2.5
+        
+
+
+        //201 --> x 5 y 6
+        //201 - (3,1) --> x 1 y 4 z 1.5
+        target_pose.position.x = 1;
+        target_pose.position.y = 4;
+        target_pose.position.z = 1.5;
+        move_pub.publish(target_pose);
+
+        //     ROS_INFO("CLK: %d\n",clk_count);
+        //     clk_count++;
+        //     if(!(clk_count%2)) {
+        //         ROS_INFO("MOVE\n");
+        //         time_count++;
+        //         target_pose.pose.position.x = r*sin(wn*time_count);
+        //         target_pose.pose.position.y = r-r*cos(wn*time_count);
+        //         target_pose.pose.position.z = 2;
+        //     }
+        //    move_pub.publish(target_pose);
+        //    time_count%=120;
+            //rotate_pub.publish(rotate_pose);
+            //alt_pub.publish(alt_pose);
 
         }
 
-
-
-	   //count+=0.01;
-	   //rotate_pose.yaw=count;
-
-       //move_pub.publish(target_pose);
-    //    if(alt_flag){
-    //     target_pose.pose.position.latitude = current_pose.latitude;
-	// 	target_pose.pose.position.longitude = current_pose.longitude;
-    //    }
-    //    move_pub.publish(target_pose);
        ros::spinOnce();
        rate.sleep();
 
