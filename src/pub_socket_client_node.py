@@ -57,11 +57,11 @@ def disconnect():
 
 @sio.on("result", namespace='/realtime')
 def result(data):
-    QR_loc.pose.position.x=data["QR_loc_x"]
-    QR_loc.pose.position.y=data["QR_loc_y"]
-    server_data.pose.position.x = data["current_home"]
-    server_data.pose.position.y = data["next_home"]
-    server_data.pose.position.z = data['bird']
+    QR_loc.pose.position.x=float(data["QR_loc_x"])
+    QR_loc.pose.position.y=float(data["QR_loc_y"])
+    server_data.pose.position.x = float(data["current_home"])
+    server_data.pose.position.y = float(data["next_home"])
+    server_data.pose.position.z = float(data['bird'])
     pub_QR.publish(QR_loc)	
     pub_data.publish(server_data)
 
