@@ -33,10 +33,10 @@
 <node name="pub_move_drone_node" pkg="greenwing" type="pub_move_drone_node" output="screen">
 </node>
 
-<node name="pub_socket_client_node" pkg="greenwing" type="pub_socket_client_node.py" output="screen">
+<!--node name="pub_socket_client_node" pkg="greenwing" type="pub_socket_client_node.py" output="screen">
 </node>
 
-<!--node name="pub_route_to_target_node" pkg="greenwing" type="pub_route_to_target_node.py" output="screen">
+<node name="pub_route_to_target_node" pkg="greenwing" type="pub_route_to_target_node.py" output="screen">
 </node>
 
 <node name="pub_camera_node" pkg="greenwing" type="pub_camera_node.py" output="screen">

@@ -13,6 +13,7 @@
 #include <sensor_msgs/LaserScan.h>
 
 int step = 0;
+double average = 0;
 int cnt_clk=1;
 
 //publisher
@@ -56,11 +57,18 @@ void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
 
 void recv_laser(const sensor_msgs::LaserScan msg){
     lidar_scan = msg;
-    // for (int i=30; i<60; i++)
-    // {
-    //      ROS_INFO("%f",lidar_scan.ranges[i]);
-    // }
-//    ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
+    double sum = 0.0;
+    int count = 0;
+    for (int i=30; i<91; ++i)
+    {
+        sum += lidar_scan.ranges[i];
+        ++count;
+    }
+    average = sum / count;
+
+    ROS_INFO("%f",average);
+
+    //ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
 }
 
 void state_cb(const mavros_msgs::State::ConstPtr msg){
@@ -213,7 +221,14 @@ int main(int argc, char **argv)
         
         //go upside
         if(step==1){
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = 4;
             target_pose.pose.position.z = current_pose.z + 1.0;
             move_pub.publish(target_pose);
@@ -224,7 +239,14 @@ int main(int argc, char **argv)
 
         //go rightsie
         if(step ==2){
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = current_pose.y-1.0;
             target_pose.pose.position.z =8.5;
             move_pub.publish(target_pose);
@@ -235,7 +257,14 @@ int main(int argc, char **argv)
 
         //go downside
         if(step == 3){
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = 2;
             target_pose.pose.position.z = current_pose.z - 1.0;
             move_pub.publish(target_pose);
@@ -247,12 +276,19 @@ int main(int argc, char **argv)
         //land on
         if(step==4)
         {   
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = -8;
             target_pose.pose.position.z = 0;
             move_pub.publish(target_pose);           
         }
-        
+
         //QR 검출 -> 동과 호수 => 401이면 옆으로가기, 402면 아래로 가기 시작
         //
 
