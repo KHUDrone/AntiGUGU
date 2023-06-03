@@ -54,10 +54,11 @@ void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
 
 void recv_laser(const sensor_msgs::LaserScan msg){
     lidar_scan = msg;
-    for (int i=30; i<60; i++)
-    {
-         ROS_INFO("%f",lidar_scan.ranges[i]);
-    }
+    ROS_INFO("%d", lidar_scan.ranges.size());
+    // for (int i=30; i<60; i++)
+    // {
+    //      ROS_INFO("%f",lidar_scan.ranges[i]);
+    // }
 //    ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
 }
 
@@ -70,9 +71,9 @@ void local_cb(const geometry_msgs::PoseStamped msg ){
 	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
 }
 
-void local_cb(const geometry_msgs::PoseStamped msg ){
+void target_cb(const geometry_msgs::PoseStamped msg ){
 	current_pose = msg.pose.position;
-	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
+	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",target_pose.x, target_pose.y, target_pose.z);
 }
 
 int main(int argc, char **argv)
