@@ -26,7 +26,7 @@ rate = rospy.Rate(0.3)
 
 @sio.on('connect', namespace='/realtime')
 def connect():
-	global comp_img
+    global comp_img
     rospy.loginfo("connected")
 
     while True:

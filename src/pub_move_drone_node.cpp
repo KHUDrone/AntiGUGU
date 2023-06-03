@@ -193,17 +193,17 @@ int main(int argc, char **argv)
         if(step==1){
             target_pose.pose.position.x = 1;
             target_pose.pose.position.y = 4;
-            target_pose.pose.position.z = current_pose.z + 0.7;
+            target_pose.pose.position.z = current_pose.z + 1.0;
             move_pub.publish(target_pose);
             //QR detection func
-            if(current_pose.z>=9.5){step=2;}
+            if(current_pose.z>=8.5){step=2;}
         }
 
         //go rightsie
         if(step ==2){
             target_pose.pose.position.x = 1;
-            target_pose.pose.position.y = current_pose.y-0.7;
-            target_pose.pose.position.z =9.5;
+            target_pose.pose.position.y = current_pose.y-1.0;
+            target_pose.pose.position.z =8.5;
             move_pub.publish(target_pose);
             //QR detection func
             if(current_pose.y<=-8){step=3;}
@@ -213,7 +213,7 @@ int main(int argc, char **argv)
         if(step == 3){
             target_pose.pose.position.x = 1;
             target_pose.pose.position.y = -8;
-            target_pose.pose.position.z = current_pose.z - 0.7;
+            target_pose.pose.position.z = current_pose.z - 1.0;
             move_pub.publish(target_pose);
             //QR detection func
             if(current_pose.z<= 1.5){step=4;}
