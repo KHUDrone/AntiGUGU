@@ -70,6 +70,11 @@ void local_cb(const geometry_msgs::PoseStamped msg ){
 	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
 }
 
+void local_cb(const geometry_msgs::PoseStamped msg ){
+	current_pose = msg.pose.position;
+	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
+}
+
 int main(int argc, char **argv)
 {
    ros::init(argc, argv, "pub_setpoints");
@@ -82,11 +87,12 @@ int main(int argc, char **argv)
    //ros::Publisher rotate_pub = n.advertise <mavros_msgs::PositionTarget> ("mavros/setpoint_raw/local", 10);
 
    //subscribers
-   //ros::Subscriber target_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting",1,target_cb); //for global
+   
    //ros::Subscriber target_alt_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting_alt",1,target_alt_cb);
    //ros::Subscriber target_sub = n.subscribe<geometry_msgs::PoseStamped>("targeting",10,target_cb);
    ros::Subscriber state_sub = n.subscribe<mavros_msgs::State>("mavros/state", 1, state_cb);
    ros::Subscriber lidar_sub = n.subscribe<sensor_msgs::LaserScan>("/laser/scan",1, recv_laser);
+   ros::Subscriber target_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting",1,target_cb); //for global
    //ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
    ros::Subscriber local_sub = n.subscribe<geometry_msgs::PoseStamped>("/mavros/local_position/pose", 1, local_cb);
 

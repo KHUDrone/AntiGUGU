@@ -3,7 +3,7 @@ import socketio
 import json
 import numpy as np
 from std_msgs.msg import String
-
+from geometry_msgs.msg import PoseStamped
 from sensor_msgs.msg import Image
 import cv2
 import eventlet
@@ -18,7 +18,7 @@ def handle_img(raw_img):
 	comp_img = frame
 
 sio = socketio.Client()
-pub_target = rospy.Publisher('targeting',GeoPoseStamped,queue_size=1)
+pub_target = rospy.Publisher('targeting',PoseStamped,queue_size=1)
 sub_camera = rospy.Subscriber('/camera/image_raw',Image,handle_img)
 
 rospy.init_node('pub_socket_client_node', anonymous=True)
