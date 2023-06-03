@@ -12,13 +12,18 @@ host = "http://127.0.0.0:5001"
 
 global comp_img
 
+
+QR_loc = PoseStamped()
+server_data = PoseStamped()
+
+
 def handle_img(raw_img):
 	global comp_img
 	frame = cv2.imencode('.jpg', raw_img, [cv2.IMWRITE_JPEG_QUALITY, 80])[1]
 	comp_img = frame
 
 sio = socketio.Client()
-pub_target = rospy.Publisher('targeting',PoseStamped,queue_size=1)
+pub_QR = rospy.Publisher('QR_targeting',PoseStamped,queue_size=1)
 sub_camera = rospy.Subscriber('/camera/image_raw',Image,handle_img)
 
 rospy.init_node('pub_socket_client_node', anonymous=True)
@@ -43,6 +48,11 @@ def disconnect():
 @sio.on("result", namespace='/realtime')
 def result(data):
     rospy.loginfo('received:', data)
+    QR_loc.pose.position.x=data["QR_loc_x"]
+    QR_loc.pose.position.y=data["QR_loc_y"]
+    server_data.pose.position.x = data["current_home"]
+    server_data.pose.position.y = data["next_home"]
+    server_data.pose.position.z = data['bird']
 
 if __name__ == "__main__" :
 	rospy.loginfo('Client start!')

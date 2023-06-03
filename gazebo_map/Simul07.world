@@ -1553,8 +1553,8 @@
           <camera>
 
             <image>
-              <width>3840</width>
-              <height>2160</height>
+              <width>2560</width>
+              <height>1440</height>
               <format>L8</format>
             </image>
             <noise>
