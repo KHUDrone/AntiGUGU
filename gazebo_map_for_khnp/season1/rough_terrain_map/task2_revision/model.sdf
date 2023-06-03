@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="task2_revision">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+    <link name="link">
+<!--      <collision name="task2_revisionC">-->
+<!--        <geometry>-->
+<!--          <mesh>-->
+<!--            <uri>model://task2_revision/model2.dae</uri>-->
+<!--            <scale>1.0 1.0 1.0</scale>-->
+<!--          </mesh>-->
+<!--        </geometry>-->
+<!--      </collision>-->
+      <visual name="task2_revisionV">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://task2_revision/model2.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,1112 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="real_map_first_floor">
+
+
+<!-- ground -->
+    <include>
+      <name>ground</name>
+      <pose>8.8 8.8 0 0 0 0</pose>
+      <uri>model://concrete_ground</uri>
+    </include>
+
+
+<!-- r1 -->
+    <include>
+      <name>r1_0</name>
+      <pose>0.8 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r2_0</name>
+      <pose>2.4 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r3_0</name>
+      <pose>4 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r4_0</name>
+      <pose>5.6 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r5_0</name>
+      <pose>7.2 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r6_0</name>
+      <pose>8.8 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r7_0</name>
+      <pose>10.4 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_0</name>
+      <pose>12 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_0</name>
+      <pose>13.6 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_0</name>
+      <pose>15.2 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r11_0</name>
+      <pose>16.8 0 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+
+<!-- r2 -->
+    <include>
+      <name>r3_1</name>
+      <pose>4 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r4_1</name>
+      <pose>5.6 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r5_1</name>
+      <pose>7.2 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r6_1</name>
+      <pose>8.8 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_1</name>
+      <pose>12 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_1</name>
+      <pose>13.6 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_1</name>
+      <pose>15.2 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r11_1</name>
+      <pose>16.8 1.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- r3 -->
+    <include>
+      <name>r2_2</name>
+      <pose>2.4 3.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r4_2</name>
+      <pose>5.6 3.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r6_2</name>
+      <pose>8.8 3.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_2</name>
+      <pose>13.6 3.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_2</name>
+      <pose>15.2 3.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- r4 -->
+    <include>
+      <name>r2_3</name>
+      <pose>2.4 4.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r3_3</name>
+      <pose>4 4.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r5_3</name>
+      <pose>7.2 4.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r7_3</name>
+      <pose>10.4 4.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- r5 -->
+    <include>
+      <name>r1_4</name>
+      <pose>0.8 6.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r3_4</name>
+      <pose>4 6.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r5_4</name>
+      <pose>7.2 6.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_4</name>
+      <pose>12 6.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_4</name>
+      <pose>15.2 6.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+
+<!-- r6 -->
+<include>
+      <name>r1_5</name>
+      <pose>0.8 8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r2_5</name>
+      <pose>2.4 8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r6_5</name>
+      <pose>8.8 8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_5</name>
+      <pose>12 8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_5</name>
+      <pose>13.6 8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r12_5</name>
+      <pose>18.4 8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r13_5</name>
+      <pose>20 8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r14_5</name>
+      <pose>18.4 7.9 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r15_5</name>
+      <pose>20 7.9 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- r7 -->
+    <include>
+      <name>r1_6</name>
+      <pose>0.8 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r3_6</name>
+      <pose>4 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r4_6</name>
+      <pose>5.6 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r5_6</name>
+      <pose>7.2 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r7_6</name>
+      <pose>10.4 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_6</name>
+      <pose>13.6 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_6</name>
+      <pose>15.2 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r12_6</name>
+      <pose>18.4 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r13_6</name>
+      <pose>20 9.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r14_6</name>
+      <pose>18.4 9.7 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r15_6</name>
+      <pose>20 9.7 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- r8 -->
+    <include>
+      <name>r2_7</name>
+      <pose>2.4 11.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r3_7</name>
+      <pose>4 11.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r4_7</name>
+      <pose>5.6 11.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r6_7</name>
+      <pose>8.8 11.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r7_7</name>
+      <pose>10.4 11.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_7</name>
+      <pose>12 11.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_7</name>
+      <pose>15.2 11.2 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- r9 -->
+    <include>
+      <name>r2_8</name>
+      <pose>2.4 12.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r7_8</name>
+      <pose>10.4 12.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_8</name>
+      <pose>12 12.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_8</name>
+      <pose>13.6 12.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r11_8</name>
+      <pose>16.8 12.8 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- r10 -->
+    <include>
+      <name>r4_9</name>
+      <pose>5.6 14.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r5_9</name>
+      <pose>7.2 14.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_9</name>
+      <pose>12 14.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_9</name>
+      <pose>15.2 14.4 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- r11 -->
+    <include>
+      <name>r2_10</name>
+      <pose>2.4 16 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r3_10</name>
+      <pose>4 16 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_10</name>
+      <pose>13.6 16 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_10</name>
+      <pose>15.2 16 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- r12 -->
+    <include>
+      <name>r1_11</name>
+      <pose>0.8 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r2_11</name>
+      <pose>2.4 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r3_11</name>
+      <pose>4 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r4_11</name>
+      <pose>5.6 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r5_11</name>
+      <pose>7.2 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r6_11</name>
+      <pose>8.8 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r7_11</name>
+      <pose>10.4 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r8_11</name>
+      <pose>12 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r9_11</name>
+      <pose>13.6 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r10_11</name>
+      <pose>15.2 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>r11_11</name>
+      <pose>16.8 17.6 0 0 0 0</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+
+
+<!-- c1 -->
+    <include>
+      <name>c0_1</name>
+      <pose>0 0.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_2</name>
+      <pose>0 2.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_3</name>
+      <pose>0 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_4</name>
+      <pose>0 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_5</name>
+      <pose>0 7.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_7</name>
+      <pose>0 10.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_8</name>
+      <pose>0 12 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_9</name>
+      <pose>0 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_10</name>
+      <pose>0 15.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c0_11</name>
+      <pose>0 16.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- c2 -->
+    <include>
+      <name>c1_2</name>
+      <pose>1.6 2.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c1_7</name>
+      <pose>1.6 10.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c1_10</name>
+      <pose>1.6 15.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- c3 -->
+    <include>
+      <name>c2_2</name>
+      <pose>3.2 2.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c2_4</name>
+      <pose>3.2 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c2_6</name>
+      <pose>3.2 8.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c2_8</name>
+      <pose>3.2 12 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c2_9</name>
+      <pose>3.2 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- c4 -->
+    <include>
+      <name>c3_3</name>
+      <pose>4.8 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c3_5</name>
+      <pose>4.8 7.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c3_9</name>
+      <pose>4.8 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c3_10</name>
+      <pose>4.8 15.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- c5 -->
+    <include>
+      <name>c4_3</name>
+      <pose>6.4 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c4_5</name>
+      <pose>6.4 7.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c4_6</name>
+      <pose>6.4 8.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c4_8</name>
+      <pose>6.4 12 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c4_11</name>
+      <pose>6.4 16.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- c6 -->
+    <include>
+      <name>c5_2</name>
+      <pose>8 2.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c5_4</name>
+      <pose>8 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c5_7</name>
+      <pose>8 10.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c5_8</name>
+      <pose>8 12 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c5_9</name>
+      <pose>8 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c5_10</name>
+      <pose>8 15.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- c7 -->
+    <include>
+      <name>c6_3</name>
+      <pose>9.6 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c6_4</name>
+      <pose>9.6 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c6_5</name>
+      <pose>9.6 7.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c6_6</name>
+      <pose>9.6 8.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c6_9</name>
+      <pose>9.6 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c6_10</name>
+      <pose>9.6 15.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c6_11</name>
+      <pose>9.6 16.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- c8 -->
+    <include>
+      <name>c7_2</name>
+      <pose>11.2 2.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c7_3</name>
+      <pose>11.2 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c7_5</name>
+      <pose>11.2 7.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c7_11</name>
+      <pose>11.2 16.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- c9 -->
+    <include>
+      <name>c8_3</name>
+      <pose>12.8 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c8_4</name>
+      <pose>12.8 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c8_7</name>
+      <pose>12.8 10.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c8_9</name>
+      <pose>12.8 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c8_10</name>
+      <pose>12.8 15.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- c10 -->
+    <include>
+      <name>c9_4</name>
+      <pose>14.4 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c9_8</name>
+      <pose>14.4 12 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+
+<!-- c11 -->
+    <include>
+      <name>c10_3</name>
+      <pose>16 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c10_4</name>
+      <pose>16 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c10_5</name>
+      <pose>16 7.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c10_6</name>
+      <pose>16 8.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c10_9</name>
+      <pose>16 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- c12 -->
+    <include>
+      <name>c11_1</name>
+      <pose>17.6 0.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_2</name>
+      <pose>17.6 2.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_3</name>
+      <pose>17.6 4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_4</name>
+      <pose>17.6 5.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_5</name>
+      <pose>17.6 7.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_7</name>
+      <pose>17.6 10.4 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_8</name>
+      <pose>17.6 12 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_9</name>
+      <pose>17.6 13.6 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_10</name>
+      <pose>17.6 15.2 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+    <include>
+      <name>c11_11</name>
+      <pose>17.6 16.8 0 0 0 1.57</pose>
+      <uri>model://wall_unit_1_7</uri>
+    </include>
+
+<!-- obstacles -->
+
+    <include>
+      <name>obsC1</name>
+      <pose>5.6 2.4 0 0 0 1.57</pose>
+      <uri>model://wall_obstacleC</uri>
+    </include>
+
+    <include>
+      <name>obsB2</name>
+      <pose>5.6 10.4 0 0 0 1.57</pose>
+      <uri>model://wall_obstacleB</uri>
+    </include>
+
+
+    <include>
+      <name>obsC3</name>
+      <pose>4 16.8 0 0 0 1.57</pose>
+      <uri>model://wall_obstacleC</uri>
+    </include>
+
+    <include>
+      <name>obsB4</name>
+      <pose>12 12 0 0 0 1.57</pose>
+      <uri>model://wall_obstacleB</uri>
+    </include>
+
+
+
+    <include>
+      <name>obsA5</name>
+      <pose>16.8 4 0 0 0 0</pose>
+      <uri>model://wall_obstacleA</uri>
+    </include>
+
+
+<!-- WayPoints  -->
+
+    <include>
+      <name>WayPoint1</name>
+      <pose>12.75 13.6 1.25 0 0 1.57</pose>
+      <uri>model://WayPoint1_prac2</uri>
+    </include>
+
+    <include>
+      <name>landing_red</name>
+      <pose>11.4 14.325 0.03 0 0 -1.57</pose>
+      <uri>model://landing_red</uri>
+    </include>
+
+    <include>
+      <name>WayPoint2</name>
+      <pose>15.2 6.35 1.25 0 0 0</pose>
+      <uri>model://WayPoint2_prac2</uri>
+    </include>
+
+    <include>
+      <name>landing_yellow</name>
+      <pose>14.475 5 0.03 0 0 0</pose>
+      <uri>model://landing_yellow</uri>
+    </include>
+
+    <include>
+      <name>WayPoint3</name>
+      <pose>17.55 0.8 1.25 0 0 1.57</pose>
+      <uri>model://WayPoint3_prac2</uri>
+    </include>
+
+    <include>
+      <name>landing_green</name>
+      <pose>16.2 1.525 0.03 0 0 -1.57</pose>
+      <uri>model://landing_green</uri>
+    </include>
+
+    <include>
+      <name>WayPoint4</name>
+      <pose>0.05 7.2 1.25 0 0 1.57</pose>
+      <uri>model://WayPoint4_prac2</uri>
+    </include>
+
+    <include>
+      <name>landing_blue</name>
+      <pose>1.35 6.475 0.03 0 0 1.57</pose>
+      <uri>model://landing_blue</uri>
+    </include>
+
+    <include>
+      <name>WayPoint5</name>
+      <pose>7.95 5.6 1.25 0 0 1.57</pose>
+      <uri>model://WayPoint5_prac2</uri>
+    </include>
+
+    <include>
+      <name>landing_purple</name>
+      <pose>6.6 6.325 0.03 0 0 -1.57</pose>
+      <uri>model://landing_purple</uri>
+    </include>
+
+
+<!-- bricks -->
+    <include>
+      <name>brick1</name>
+      <pose>6.6 0.6 0 0 0 0</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+    <include>
+      <name>brick2</name>
+      <pose>6.1 0.8 0 0 0 0</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+
+
+    <include>
+      <name>brick3</name>
+      <pose>0.7 11 0 0 0 1.57</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+    <include>
+      <name>brick4</name>
+      <pose>0.8 11.5 0 0 0 1.57</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+
+    <include>
+      <name>brick5</name>
+      <pose>13 7.2 0 0 0 0</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+    <include>
+      <name>brick6</name>
+      <pose>12.5 7.4 0 0 0 0</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+
+    <include>
+      <name>brick7</name>
+      <pose>6.6 13.4 0 0 0 0</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+    <include>
+      <name>brick8</name>
+      <pose>6.1 13.6 0 0 0 0</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+
+<!-- arrow -->
+
+
+    <include>
+      <name>arrow13</name>
+      <pose>15.6 0.05 1 0 0 3.14</pose>
+      <uri>model://arrow</uri>
+    </include>
+    <include>
+      <name>arrow14</name>
+      <pose>14 0.05 1 0 0 3.14</pose>
+      <uri>model://arrow</uri>
+    </include>
+    <include>
+      <name>arrow15</name>
+      <pose>12.4 0.05 1 0 0 3.14</pose>
+      <uri>model://arrow</uri>
+    </include>
+    <include>
+      <name>arrow16</name>
+      <pose>15.6 1.55 1 0 0 3.14</pose>
+      <uri>model://arrow</uri>
+    </include>
+    <include>
+      <name>arrow17</name>
+      <pose>14 1.55 1 0 0 3.14</pose>
+      <uri>model://arrow</uri>
+    </include>
+    <include>
+      <name>arrow18</name>
+      <pose>12.4 1.55 1 0 0 3.14</pose>
+      <uri>model://arrow</uri>
+    </include>
+
+
+
+    <include>
+      <name>arrow19</name>
+      <pose>14.8 16.05 1 0 0 0</pose>
+      <uri>model://arrow</uri>
+    </include>
+    <include>
+      <name>arrow20</name>
+      <pose>13.2 16.05 1 0 0 0</pose>
+      <uri>model://arrow</uri>
+    </include>
+
+    <include>
+      <name>arrow21</name>
+      <pose>14.8 17.55 1 0 0 0</pose>
+      <uri>model://arrow</uri>
+    </include>
+    <include>
+      <name>arrow22</name>
+      <pose>13.2 17.55 1 0 0 0</pose>
+      <uri>model://arrow</uri>
+    </include>
+
+
+    <include>
+      <name>top</name>
+      <pose>-0.8 -0.8 0 0 0 0</pose>
+      <uri>model://practice_first_top2</uri>
+    </include>
+
+
+
+
+    <include>
+      <name>elecbox1</name>
+      <pose>0 3.8 1.2 0 0 0</pose>
+      <uri>model://elecbox</uri>
+    </include>
+
+    <include>
+      <name>elecbox2</name>
+      <pose>17.6 15.45 1.2 0 0 3.14</pose>
+      <uri>model://elecbox2</uri>
+    </include>
+
+
+    <include>
+      <name>elecbox3</name>
+      <pose>3.2 13.4 1.2 0 0 0</pose>
+      <uri>model://elecbox2</uri>
+    </include>
+
+    <include>
+      <name>elecbox4</name>
+      <pose>17.5 7.3 1.2 0 0 3.14</pose>
+      <uri>model://elecbox</uri>
+    </include>
+
+
+    <include>
+      <name>elecbox5</name>
+      <pose>5.3 17.65 1.2 0 0 -1.57</pose>
+      <uri>model://elecbox2</uri>
+    </include>
+    <include>
+      <name>elecbox6</name>
+      <pose>8 13.4 1.2 0 0 0</pose>
+      <uri>model://elecbox2</uri>
+    </include>
+
+    <include>
+      <name>elecbox7</name>
+      <pose>11.7 17.65 1.2 0 0 -1.57</pose>
+      <uri>model://elecbox</uri>
+    </include>
+
+    <include>
+      <name>elecbox8</name>
+      <pose>9.6 3.8 1.2 0 0 0</pose>
+      <uri>model://elecbox</uri>
+    </include>
+
+
+    <include>
+      <name>elecbox9</name>
+      <pose>15.9 8.9 1.2 0 0 3.14</pose>
+      <uri>model://elecbox2</uri>
+    </include>
+
+
+    <include>
+      <name>elecbox10</name>
+      <pose>5.9 0 1.2 0 0 1.57</pose>
+      <uri>model://elecbox</uri>
+    </include>
+
+    <include>
+      <name>elecbox11</name>
+      <pose>5.9 3.2 1.2 0 0 1.57</pose>
+      <uri>model://elecbox2</uri>
+    </include>
+  </model>
+</sdf>

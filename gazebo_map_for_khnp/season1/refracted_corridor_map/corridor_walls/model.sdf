@@ -1,0 +1,709 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="corridor_walls">
+
+    <include>
+      <name>w1</name>
+      <pose>0.6 0.74 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w2</name>
+      <pose>1.6 0.74 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w3</name>
+      <pose>2.6 0.74 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w4</name>
+      <pose>3.6 0.74 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w5</name>
+      <pose>4.6 0.74 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w6</name>
+      <pose>5.4 0.74 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>w7</name>
+      <pose>5.74 0.09 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w8</name>
+      <pose>5.74 -0.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w9</name>
+      <pose>5.74 -1.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w10</name>
+      <pose>5.74 -2.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w11</name>
+      <pose>5.74 -3.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w12</name>
+      <pose>5.74 -4.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w13</name>
+      <pose>5.74 -5.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w14</name>
+      <pose>5.74 -6.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w15</name>
+      <pose>5.74 -7.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>w16</name>
+      <pose>5.74 -8.91 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+
+
+
+    <include>
+      <name>e1</name>
+      <pose>0.6 -0.73 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e2</name>
+      <pose>1.6 -0.73 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e3</name>
+      <pose>2.6 -0.73 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e4</name>
+      <pose>3.6 -0.73 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e5</name>
+      <pose>3.9 -0.73 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e6</name>
+      <pose>4.25 -1.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e7</name>
+      <pose>4.25 -2.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e8</name>
+      <pose>4.25 -3.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e9</name>
+      <pose>4.25 -4.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e10</name>
+      <pose>4.25 -5.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e11</name>
+      <pose>4.25 -6.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e12</name>
+      <pose>4.25 -7.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e13</name>
+      <pose>4.25 -8.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e14</name>
+      <pose>4.25 -9.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e15</name>
+      <pose>4.25 -10.37 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e16</name>
+      <pose>4.9 -10.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e17</name>
+      <pose>5.9 -10.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e18</name>
+      <pose>6.9 -10.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e19</name>
+      <pose>7.9 -10.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e20</name>
+      <pose>8.9 -10.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e21</name>
+      <pose>9.9 -10.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e22</name>
+      <pose>10.9 -10.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e23</name>
+      <pose>9.25 -3.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e24</name>
+      <pose>9.25 -4.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e25</name>
+      <pose>9.25 -5.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e26</name>
+      <pose>9.25 -6.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e27</name>
+      <pose>9.25 -7.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>f28</name>
+      <pose>9.25 -8.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>f29</name>
+      <pose>9.25 -2.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e28</name>
+      <pose>14.25 -4.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e29</name>
+      <pose>14.25 -5.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e30</name>
+      <pose>14.25 -6.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e31</name>
+      <pose>14.25 -7.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e32</name>
+      <pose>14.25 -8.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e33</name>
+      <pose>20.75 -4.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e34</name>
+      <pose>20.75 -5.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e35</name>
+      <pose>20.75 -6.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e36</name>
+      <pose>20.75 -7.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e37</name>
+      <pose>20.75 -8.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e38</name>
+      <pose>24.25 -4.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e39</name>
+      <pose>24.25 -5.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e40</name>
+      <pose>24.25 -6.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e41</name>
+      <pose>20.75 -2.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e42</name>
+      <pose>20.75 -3.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e43</name>
+      <pose>24.25 -3.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e44</name>
+      <pose>24.25 -2.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+
+    <include>
+      <name>e47</name>
+      <pose>15.75 -5.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e48</name>
+      <pose>15.75 -6.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e49</name>
+      <pose>15.75 -4.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e50</name>
+      <pose>15.75 -3.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e51</name>
+      <pose>15.75 -2.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e52</name>
+      <pose>19.25 -5.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e53</name>
+      <pose>19.25 -6.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e54</name>
+      <pose>19.25 -4.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e55</name>
+      <pose>19.25 -3.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e56</name>
+      <pose>19.25 -2.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e57</name>
+      <pose>19.25 -1.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e58</name>
+      <pose>19.25 -0.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e59</name>
+      <pose>25.75 -4.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e60</name>
+      <pose>25.75 -3.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e61</name>
+      <pose>25.75 -2.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e62</name>
+      <pose>25.75 -1.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e63</name>
+      <pose>25.75 -0.9 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>e64</name>
+      <pose>10.75 -10.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e65</name>
+      <pose>10.75 -9.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e66</name>
+      <pose>10.75 -8.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e67</name>
+      <pose>10.75 -7.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e68</name>
+      <pose>10.75 -6.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e69</name>
+      <pose>10.75 -5.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>e70</name>
+      <pose>10.75 -4.1 0 0 0 1.5708</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>g1</name>
+      <pose>9.6 -2.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g2</name>
+      <pose>10.6 -2.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g3</name>
+      <pose>11.6 -2.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g4</name>
+      <pose>12.6 -2.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g5</name>
+      <pose>13.6 -2.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g6</name>
+      <pose>14.6 -2.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g7</name>
+      <pose>15.6 -2.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>g8</name>
+      <pose>14.6 -8.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g9</name>
+      <pose>15.6 -8.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g10</name>
+      <pose>16.6 -8.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g11</name>
+      <pose>17.6 -8.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g12</name>
+      <pose>18.6 -8.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g13</name>
+      <pose>19.6 -8.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g14</name>
+      <pose>20.6 -8.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>g15</name>
+      <pose>19.6 -0.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g16</name>
+      <pose>20.6 -0.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g17</name>
+      <pose>21.6 -0.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g18</name>
+      <pose>22.6 -0.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g19</name>
+      <pose>23.6 -0.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g20</name>
+      <pose>24.6 -0.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g21</name>
+      <pose>25.6 -0.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+
+    <include>
+      <name>g22</name>
+      <pose>30.1 -6.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g23</name>
+      <pose>29.1 -6.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g24</name>
+      <pose>28.1 -6.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g25</name>
+      <pose>27.1 -6.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g26</name>
+      <pose>26.1 -6.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g27</name>
+      <pose>25.1 -6.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>g28</name>
+      <pose>24.1 -6.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>h1</name>
+      <pose>21.4 -1.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h2</name>
+      <pose>22.4 -1.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h3</name>
+      <pose>23.4 -1.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h4</name>
+      <pose>23.6 -1.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>h5</name>
+      <pose>26.4 -5.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h6</name>
+      <pose>27.4 -5.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h7</name>
+      <pose>28.4 -5.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h8</name>
+      <pose>29.4 -5.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h9</name>
+      <pose>30.15 -5.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>h10</name>
+      <pose>16.4 -7.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h11</name>
+      <pose>17.4 -7.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h12</name>
+      <pose>18.4 -7.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h13</name>
+      <pose>18.6 -7.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>h14</name>
+      <pose>11.4 -3.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h15</name>
+      <pose>12.4 -3.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h16</name>
+      <pose>13.4 -3.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h17</name>
+      <pose>13.6 -3.75 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+    <include>
+      <name>h18</name>
+      <pose>6.35 -9.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h19</name>
+      <pose>7.35 -9.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h20</name>
+      <pose>8.35 -9.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+    <include>
+      <name>h21</name>
+      <pose>8.6 -9.25 0 0 0 0</pose>
+      <uri>model://concrete_wall_1m</uri>
+    </include>
+
+  </model>
+</sdf>

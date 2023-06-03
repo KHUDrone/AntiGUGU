@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+<model name='start_line_mini'>
+<static>true</static>
+<link name="link">
+   <pose frame=''>0 0 0.01 0 0 0</pose>
+  <visual name='finishV'>
+    <cast_shadows>false</cast_shadows>
+    <geometry>
+      <mesh>
+        <scale>1.0 1.0 1.0</scale>
+        <uri>model://start_line_mini/start_line_mini.dae</uri>
+      </mesh>
+    </geometry>
+    <material>
+      <script>
+        <name>start_line_mini</name>
+        <uri>model://start_line_mini/start_line_mini.dae</uri>
+      </script>
+    </material>
+  </visual>
+</link>
+</model>
+</sdf>

@@ -1,0 +1,17 @@
+material vrc/manipulation_1_false
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture manipulation,1,false.png
+				filtering anistropic
+				max_anisotropy 16
+				scale 1 1 
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+material vrc/corridor_4_false
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture corridor,4,false.png
+				filtering anistropic
+				max_anisotropy 16
+				scale 1 1 
+			}
+		}
+	}
+}

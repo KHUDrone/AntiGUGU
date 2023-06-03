@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="disturbance_sphere">
+    <static>false</static>
+    <self_collide>true</self_collide>
+    <link name="link">
+      <inertial>
+        <mass>10.0</mass>
+          <inertia>
+            <ixx>1.44</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>1.44</iyy>
+            <iyz>0.0</iyz>
+            <izz>1.44</izz>
+          </inertia>
+      </inertial>
+      <collision name="ccc">
+        <geometry>
+          <sphere>
+            <radius>0.3</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="vvv">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <sphere>
+            <radius>0.3</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

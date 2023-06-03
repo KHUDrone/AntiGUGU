@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='wall_unit_1_7'>
+    <pose frame=''>0 0 0 0 -0 0</pose>
+    <link name='link'>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>1.6 0.1 2.5</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='visual'>
+        <pose frame=''>0 0 1.25 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>1.6 0.1 2.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://wall_unit_1_7/materials/scripts</uri>
+            <uri>model://wall_unit_1_7/materials/textures</uri>
+            <name>vrc/wall_unit_1_7</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <static>1</static>
+  </model>
+</sdf>

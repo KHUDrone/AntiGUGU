@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='floor_8_5'>
+    <pose frame=''>0 0 -0.076 1.57 0 0</pose>
+    <link name='floor_8_5'>
+      <collision name='floor_8_5_Collision'>
+        <geometry>
+          <box>
+            <size>8.5 0.15 1.5</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+      </collision>
+      <visual name='floor_8_5_Visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>8.5 0.15 1.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/CeilingTiled</name>
+          </script>
+          <ambient>1 1 1 1</ambient>
+        </material>
+        <meta>
+          <layer>0</layer>
+        </meta>
+      </visual>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </link>
+    <static>1</static>
+  </model>
+</sdf>

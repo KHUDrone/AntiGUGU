@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+<model name='redline'>
+<static>true</static>
+<link name="redline">
+   <pose frame=''>0 0 0.01 0 0 0</pose>
+<!--   <collision name='redlineC'>-->
+<!--    <geometry>-->
+<!--      <mesh>-->
+<!--        <scale>1.0 1.0 1.0</scale>-->
+<!--        <uri>model://redline/redline.dae</uri>-->
+<!--      </mesh>-->
+<!--    </geometry>-->
+<!--  </collision>-->
+  <visual name='redlineV'>
+    <cast_shadows>false</cast_shadows>
+    <geometry>
+      <mesh>
+        <scale>1.0 1.0 1.0</scale>
+        <uri>model://redline/redline.dae</uri>
+      </mesh>
+    </geometry>
+    <material>
+      <script>
+        <name>start</name>
+        <uri>model://redline/redline.dae</uri>
+      </script>
+    </material>
+  </visual>
+</link>
+</model>
+</sdf>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="narrow_stairs">
+    <pose>0 0 0 0 0 0</pose>
+    <link name="link">
+      <collision name="narrow_stairsC">
+        <geometry>
+          <mesh>
+            <uri>model://narrow_stairs/sta.dae</uri>
+            <scale>1.0 1.0 0.7</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="narrow_stairsV">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://narrow_stairs/sta.dae</uri>
+            <scale>1.0 1.0 0.7</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

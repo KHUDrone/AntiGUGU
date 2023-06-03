@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+<model name='roof_6m'>
+<static>true</static>
+<link name="link">
+   <pose frame=''>0 0 2.5 0 0 0</pose>
+   <collision name='roof_firstC'>
+    <geometry>
+      <mesh>
+        <scale>1.0 -1.0 1.0</scale>
+        <uri>model://roof_6m/roof2.dae</uri>
+      </mesh>
+    </geometry>
+  </collision>
+  <visual name='roof_firstV'>
+    <cast_shadows>false</cast_shadows>
+    <geometry>
+      <mesh>
+        <scale>1.0 -1.0 1.0</scale>
+        <uri>model://roof_6m/roof2.dae</uri>
+      </mesh>
+    </geometry>
+  </visual>
+</link>
+</model>
+</sdf>

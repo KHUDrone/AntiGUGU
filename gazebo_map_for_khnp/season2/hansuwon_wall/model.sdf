@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="hansuwon_wall">
+
+    <include>
+      <name>w1</name>
+      <pose>0 0 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w2</name>
+      <pose>0 3 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w3</name>
+      <pose>0 6 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w4</name>
+      <pose>0 9 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w5</name>
+      <pose>0 12 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+
+
+
+    <include>
+      <name>w10</name>
+      <pose>1.6 0 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w11</name>
+      <pose>1.6 3 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w12</name>
+      <pose>1.6 6 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w13</name>
+      <pose>1.6 9 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+    <include>
+      <name>w14</name>
+      <pose>1.6 12 0 0 0 1.5708</pose>
+      <uri>model://wall_unit_3m</uri>
+    </include>
+
+
+  </model>
+</sdf>

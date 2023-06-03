@@ -1,0 +1,16 @@
+material vrc/box_manipulation,2,false_blue
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture box_manipulation,2,false_blue.png
+				filtering anistropic
+				max_anisotropy 16
+				scale 1 1
+			}
+		}
+	}
+}

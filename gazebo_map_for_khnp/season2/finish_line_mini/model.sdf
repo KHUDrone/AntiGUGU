@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+<model name='finish_line_mini'>
+<static>true</static>
+<link name="link">
+   <pose frame=''>0 0 0.01 0 0 0</pose>
+<!--   <collision name='finishC'>-->
+<!--    <geometry>-->
+<!--      <mesh>-->
+<!--        <scale>1.0 1.0 1.0</scale>-->
+<!--        <uri>model://finish/model.dae</uri>-->
+<!--      </mesh>-->
+<!--    </geometry>-->
+<!--  </collision>-->
+  <visual name='finishV'>
+    <cast_shadows>false</cast_shadows>
+    <geometry>
+      <mesh>
+        <scale>1.0 1.0 1.0</scale>
+        <uri>model://finish_line_mini/model.dae</uri>
+      </mesh>
+    </geometry>
+    <material>
+      <script>
+        <name>finish_line_mini</name>
+        <uri>model://finish_line_mini/model.dae</uri>
+      </script>
+    </material>
+  </visual>
+</link>
+</model>
+</sdf>

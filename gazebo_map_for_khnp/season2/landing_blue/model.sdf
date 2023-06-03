@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="landing_blue">
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://landing_blue/blue.dae</uri>
+            <scale>0.8 0.8 1.0</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

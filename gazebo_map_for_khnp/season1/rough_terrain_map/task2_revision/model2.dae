@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.91.2 commit date:2021-01-19, commit time:16:15, hash:5be9ef417703</authoring_tool>
+    </contributor>
+    <created>2021-09-03T01:32:53</created>
+    <modified>2021-09-03T01:32:53</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="skp_camera_Last_Saved_SketchUp_View-camera" name="skp_camera_Last_Saved_SketchUp_View">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">0</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">1</znear>
+            <zfar sid="zfar">1000</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <dof_distance sid="dof_distance" type="float">10</dof_distance>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_effects>
+    <effect id="edge_color000255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Groundcover_Sand_Smooth-effect">
+      <profile_COMMON>
+        <newparam sid="Groundcover_Sand_Smooth_jpg-surface">
+          <surface type="2D">
+            <init_from>Groundcover_Sand_Smooth_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Groundcover_Sand_Smooth_jpg-sampler">
+          <sampler2D>
+            <source>Groundcover_Sand_Smooth_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="Groundcover_Sand_Smooth_jpg-sampler" texcoord="ID13"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="edge_color182148101255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="edge_color149146135255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="Groundcover_Sand_Smooth_jpg" name="Groundcover_Sand_Smooth_jpg">
+      <init_from>Groundcover_Sand_Smooth.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="edge_color000255-material" name="edge_color000255">
+      <instance_effect url="#edge_color000255-effect"/>
+    </material>
+    <material id="Groundcover_Sand_Smooth-material" name="Groundcover_Sand_Smooth">
+      <instance_effect url="#Groundcover_Sand_Smooth-effect"/>
+    </material>
+    <material id="edge_color182148101255-material" name="edge_color182148101255">
+      <instance_effect url="#edge_color182148101255-effect"/>
+    </material>
+    <material id="edge_color149146135255-material" name="edge_color149146135255">
+      <instance_effect url="#edge_color149146135255-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="ID28-mesh" name="ID28">
+      <mesh>
+        <source id="ID28-mesh-positions">
+          <float_array id="ID28-mesh-positions-array" count="0"/>
+          <technique_common>
+            <accessor source="#ID28-mesh-positions-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ID28-mesh-normals">
+          <float_array id="ID28-mesh-normals-array" count="0"/>
+          <technique_common>
+            <accessor source="#ID28-mesh-normals-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="ID28-mesh-vertices">
+          <input semantic="POSITION" source="#ID28-mesh-positions"/>
+        </vertices>
+      </mesh>
+    </geometry>
+    <geometry id="ID24-mesh" name="ID24">
+      <mesh>
+        <source id="ID24-mesh-positions">
+          <float_array id="ID24-mesh-positions-array" count="0"/>
+          <technique_common>
+            <accessor source="#ID24-mesh-positions-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ID24-mesh-normals">
+          <float_array id="ID24-mesh-normals-array" count="0"/>
+          <technique_common>
+            <accessor source="#ID24-mesh-normals-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="ID24-mesh-vertices">
+          <input semantic="POSITION" source="#ID24-mesh-positions"/>
+        </vertices>
+      </mesh>
+    </geometry>
+    <geometry id="ID3-mesh" name="ID3">
+      <mesh>
+        <source id="ID3-mesh-positions">
+          <float_array id="ID3-mesh-positions-array" count="240">539.2061 62.99213 -15.74803 334.4621 -15.74803 -15.74803 334.4621 62.99213 -15.74803 539.2061 -15.74803 -15.74803 539.2061 -15.74803 -15.74803 539.2061 62.99213 -15.74803 334.4621 -15.74803 -15.74803 334.4621 62.99213 -15.74803 334.4621 62.99213 -15.74803 334.4621 -15.74803 -15.74803 539.2061 62.99213 -15.74803 539.2061 -15.74803 -15.74803 334.4621 0 0 334.4621 -15.74803 -15.74803 334.4621 -15.74803 0 334.4621 62.99213 -15.74803 334.4621 47.24409 0 334.4621 62.99213 0 334.4621 62.99213 0 334.4621 47.24409 0 334.4621 62.99213 -15.74803 334.4621 0 0 334.4621 -15.74803 -15.74803 334.4621 -15.74803 0 334.4621 0 0 334.4621 -15.74803 0 334.4621 47.24409 0 334.4621 62.99213 0 334.4621 62.99213 0 539.2061 62.99213 -15.74803 334.4621 62.99213 -15.74803 539.2061 62.99213 0 539.2061 62.99213 0 334.4621 62.99213 0 539.2061 62.99213 -15.74803 334.4621 62.99213 -15.74803 539.2061 62.99213 0 539.2061 62.99213 -15.74803 539.2061 -15.74803 0 539.2061 -15.74803 -15.74803 539.2061 0 0 539.2061 47.24409 0 539.2061 62.99213 0 539.2061 62.99213 0 539.2061 62.99213 -15.74803 539.2061 47.24409 0 539.2061 0 0 539.2061 -15.74803 0 539.2061 -15.74803 -15.74803 539.2061 0 0 539.2061 47.24409 0 539.2061 -15.74803 0 539.2061 -15.74803 0 334.4621 -15.74803 -15.74803 539.2061 -15.74803 -15.74803 334.4621 -15.74803 0 334.4621 -15.74803 0 539.2061 -15.74803 0 334.4621 -15.74803 -15.74803 539.2061 -15.74803 -15.74803 334.4621 0 0 0 47.24409 0 0 0 0 334.4621 47.24409 0 334.4621 47.24409 0 334.4621 0 0 0 47.24409 0 0 0 0 0 47.24409 0 0 0 0 774.6921 47.24409 0 539.2061 0 0 539.2061 47.24409 0 774.6921 0 0 774.6921 0 0 774.6921 47.24409 0 539.2061 0 0 539.2061 47.24409 0 774.6921 0 0 774.6921 47.24409 0</float_array>
+          <technique_common>
+            <accessor source="#ID3-mesh-positions-array" count="80" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ID3-mesh-normals">
+          <float_array id="ID3-mesh-normals-array" count="18">0 0 -1 0 0 1 -1 0 0 1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#ID3-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ID3-mesh-map-0">
+          <float_array id="ID3-mesh-map-0-array" count="216">-29.9559 3.499563 -18.58123 -0.8748906 -18.58123 3.499563 -18.58123 -0.8748906 -29.9559 3.499563 -29.9559 -0.8748906 -29.9559 -0.8748906 -29.9559 3.499563 -18.58123 -0.8748906 -18.58123 3.499563 -18.58123 -0.8748906 -29.9559 3.499563 0 0 0.8748906 -0.8748906 0.8748906 0 0.8748906 -0.8748906 0 0 -3.499563 -0.8748906 -3.499563 -0.8748906 0 0 -2.624672 0 -3.499563 -0.8748906 -2.624672 0 -3.499563 0 -3.499563 0 -2.624672 0 -3.499563 -0.8748906 -2.624672 0 0 0 -3.499563 -0.8748906 -3.499563 -0.8748906 0 0 0.8748906 -0.8748906 0.8748906 0 0.8748906 -0.8748906 0 0 -18.58123 0 -29.9559 -0.8748906 -18.58123 -0.8748906 -29.9559 -0.8748906 -18.58123 0 -29.9559 0 -29.9559 0 -18.58123 0 -29.9559 -0.8748906 -18.58123 -0.8748906 -29.9559 -0.8748906 -18.58123 0 3.499563 -0.8748906 -0.8748906 0 -0.8748906 -0.8748906 -0.8748906 0 3.499563 -0.8748906 0 0 0 0 3.499563 -0.8748906 2.624672 0 2.624672 0 3.499563 -0.8748906 3.499563 0 3.499563 0 3.499563 -0.8748906 2.624672 0 2.624672 0 3.499563 -0.8748906 0 0 0 0 3.499563 -0.8748906 -0.8748906 0 -0.8748906 -0.8748906 -0.8748906 0 3.499563 -0.8748906 29.9559 0 18.58123 -0.8748906 29.9559 -0.8748906 18.58123 -0.8748906 29.9559 0 18.58123 0 18.58123 0 29.9559 0 18.58123 -0.8748906 29.9559 -0.8748906 18.58123 -0.8748906 29.9559 0 18.58123 0 0 2.624672 0 0 0 2.624672 18.58123 0 18.58123 2.624672 18.58123 2.624672 18.58123 0 0 2.624672 0 0 0 2.624672 18.58123 0 -43.03845 2.624672 -29.9559 0 -29.9559 2.624672 -29.9559 0 -43.03845 2.624672 -43.03845 0 -43.03845 0 -43.03845 2.624672 -29.9559 0 -29.9559 2.624672 -29.9559 0 -43.03845 2.624672</float_array>
+          <technique_common>
+            <accessor source="#ID3-mesh-map-0-array" count="108" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="ID3-mesh-vertices">
+          <input semantic="POSITION" source="#ID3-mesh-positions"/>
+        </vertices>
+        <triangles material="Groundcover_Sand_Smooth-material" count="36">
+          <input semantic="VERTEX" source="#ID3-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#ID3-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#ID3-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 1 0 3 0 0 4 3 0 5 4 1 6 5 1 7 6 1 8 7 1 9 6 1 10 5 1 11 12 2 12 13 2 13 14 2 14 13 2 15 12 2 16 15 2 17 15 2 18 12 2 19 16 2 20 15 2 21 16 2 22 17 2 23 18 3 24 19 3 25 20 3 26 19 3 27 21 3 28 20 3 29 20 3 30 21 3 31 22 3 32 23 3 33 22 3 34 21 3 35 28 4 36 29 4 37 30 4 38 29 4 39 28 4 40 31 4 41 32 5 42 33 5 43 34 5 44 35 5 45 34 5 46 33 5 47 37 3 48 38 3 49 39 3 50 38 3 51 37 3 52 40 3 53 40 3 54 37 3 55 41 3 56 41 3 57 37 3 58 42 3 59 43 2 60 44 2 61 45 2 62 45 2 63 44 2 64 46 2 65 46 2 66 44 2 67 47 2 68 48 2 69 47 2 70 44 2 71 52 5 72 53 5 73 54 5 74 53 5 75 52 5 76 55 5 77 56 4 78 57 4 79 58 4 80 59 4 81 58 4 82 57 4 83 60 1 84 61 1 85 62 1 86 61 1 87 60 1 88 63 1 89 64 0 90 65 0 91 66 0 92 67 0 93 66 0 94 65 0 95 70 0 96 71 0 97 72 0 98 71 0 99 70 0 100 73 0 101 74 1 102 75 1 103 76 1 104 77 1 105 76 1 106 75 1 107</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="SketchUp_002" name="SketchUp.002" type="NODE">
+        <matrix sid="transform">0.0254 0 0 0 0 0.0254 0 0 0 0 0.0254 0 0 0 0 1</matrix>
+        <instance_geometry url="#ID28-mesh" name="SketchUp.002">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="edge_color000255-material" target="#edge_color000255-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="SketchUp_001" name="SketchUp.001" type="NODE">
+        <matrix sid="transform">0.0254 0 0 0 0 0.0254 0 0 0 0 0.0254 0 0 0 0 1</matrix>
+        <instance_geometry url="#ID24-mesh" name="SketchUp.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="edge_color000255-material" target="#edge_color000255-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="SketchUp" name="SketchUp" type="NODE">
+        <matrix sid="transform">0.0254 0 0 0 0 0.0254 0 0 0 0 0.0254 0 0 0 0 1</matrix>
+        <instance_geometry url="#ID3-mesh" name="SketchUp">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Groundcover_Sand_Smooth-material" target="#Groundcover_Sand_Smooth-material">
+                <bind_vertex_input semantic="ID13" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="edge_color182148101255-material" target="#edge_color182148101255-material">
+                <bind_vertex_input semantic="ID13" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="edge_color000255-material" target="#edge_color000255-material">
+                <bind_vertex_input semantic="ID13" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="edge_color149146135255-material" target="#edge_color149146135255-material">
+                <bind_vertex_input semantic="ID13" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <node id="skp_camera_Last_Saved_SketchUp_View" name="skp_camera_Last_Saved_SketchUp_View" type="NODE">
+          <matrix sid="transform">0.8861662 0.3520131 -0.3013247 -74.7981 -0.4633679 0.6732062 -0.5762671 -685.0237 8.47839e-9 0.6502926 0.7596839 898.8782 0 0 0 1</matrix>
+          <instance_camera url="#skp_camera_Last_Saved_SketchUp_View-camera"/>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

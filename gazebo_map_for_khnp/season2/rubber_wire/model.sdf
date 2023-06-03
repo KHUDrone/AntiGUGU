@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+<model name='rubber_wire'>
+<static>true</static>
+<link name="link">
+   <pose frame=''>0.15 -0.15 2.35 0 1.57 0</pose>
+  <visual name='visual'>
+    <cast_shadows>false</cast_shadows>
+    <geometry>
+      <mesh>
+        <scale>1.0 1.0 1.0</scale>
+        <uri>model://rubber_wire/untitled.dae</uri>
+      </mesh>
+    </geometry>
+  </visual>
+</link>
+<link name="link2">
+   <pose frame=''>0.15 0.15 2.35 0 1.57 0</pose>
+  <visual name='visual2'>
+    <cast_shadows>false</cast_shadows>
+    <geometry>
+      <mesh>
+        <scale>1.0 1.0 1.0</scale>
+        <uri>model://rubber_wire/untitled.dae</uri>
+      </mesh>
+    </geometry>
+  </visual>
+</link>
+</model>
+</sdf>

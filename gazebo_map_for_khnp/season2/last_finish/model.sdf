@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+<model name='last_finish'>
+<static>true</static>
+<link name="link">
+   <pose frame=''>0 0 0.01 0 0 0</pose>
+   <collision name='last_finishC'>
+    <geometry>
+      <mesh>
+        <scale>1.0 1.0 1.0</scale>
+        <uri>model://last_finish/last_finish2.dae</uri>
+      </mesh>
+    </geometry>
+  </collision>
+  <visual name='last_finishV'>
+    <cast_shadows>false</cast_shadows>
+    <geometry>
+      <mesh>
+        <scale>1.0 1.0 1.0</scale>
+        <uri>model://last_finish/last_finish2.dae</uri>
+      </mesh>
+    </geometry>
+    <material>
+      <script>
+        <name>last_finish</name>
+        <uri>model://last_finish/last_finish2.dae</uri>
+      </script>
+    </material>
+  </visual>
+</link>
+</model>
+</sdf>

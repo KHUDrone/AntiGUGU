@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="practice_map2">
+
+    <include>
+      <name>first_floor</name>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://practice_first_floor2</uri>
+    </include>
+  
+
+    <include>
+      <name>second_floor</name>
+      <pose>0 0 8 0 0 0</pose>
+      <uri>model://practice_second_floor2</uri>
+    </include>
+
+
+    <include>
+      <name>stairs</name>
+      <pose>-1 8.04 0 0 0 1.57</pose>
+      <uri>model://stairs</uri>
+    </include>
+
+
+    <include>
+      <name>ground</name>
+      <pose>-0.5 8.8 0.05 0 0 1.57</pose>
+      <scale>0.06 0.06 1</scale>
+      <uri>model://concrete_ground2</uri>
+    </include>
+
+
+
+    <include>
+      <name>ground2</name>
+      <pose>18.1 8.8 0.05 0 0 1.57</pose>
+      <scale>0.06 0.06 1</scale>
+      <uri>model://concrete_ground2</uri>
+    </include>
+    <include>
+      <name>ground3</name>
+      <pose>19.2 8.8 0.05 0 0 1.57</pose>
+      <scale>0.06 0.06 1</scale>
+      <uri>model://concrete_ground2</uri>
+    </include>
+    <include>
+      <name>ground4</name>
+      <pose>20.3 8.8 0.05 0 0 1.57</pose>
+      <scale>0.06 0.06 1</scale>
+      <uri>model://concrete_ground2</uri>
+    </include>
+
+
+    <include>
+      <name>ground5</name>
+      <pose>18.1 8.8 8.05 0 0 1.57</pose>
+      <scale>0.06 0.06 1</scale>
+      <uri>model://concrete_ground2</uri>
+    </include>
+    <include>
+      <name>ground6</name>
+      <pose>19.2 8.8 8.05 0 0 1.57</pose>
+      <scale>0.06 0.06 1</scale>
+      <uri>model://concrete_ground2</uri>
+    </include>
+    <include>
+      <name>ground7</name>
+      <pose>20.3 8.8 8.05 0 0 1.57</pose>
+      <uri>model://concrete_ground2</uri>
+    </include>
+
+
+    <include>
+      <name>start</name>
+      <pose>19.5 8.8 0.05 0 0 3.14</pose>
+      <uri>model://first_start</uri>
+    </include>
+
+    <include>
+      <name>start_line</name>
+      <pose>20.25 8.8 0.05 0 0 1.57</pose>
+      <uri>model://start_line</uri>
+    </include>
+
+
+    <!--include>
+      <name>column</name>
+      <pose>18 8.8 0.25 0 0 0</pose>
+      <uri>model://column</uri>
+    </include>
+    <include>
+      <name>start_qr</name>
+      <pose>18.09 8.8 0.45 0 0 1.57</pose>
+      <uri>model://START_qr</uri>
+    </include-->
+
+
+    <include>
+      <name>column</name>
+      <pose>20.5 8.8 8.25 0 0 0</pose>
+      <uri>model://column</uri>
+    </include>
+    <include>
+      <name>finish_qr</name>
+      <pose>20.41 8.8 8.4 0 0 1.57</pose>
+      <uri>model://FINISH_qr</uri>
+    </include>
+
+    <include>
+      <name>finish</name>
+      <pose>19.5 8.8 8.05 0 0 0</pose>
+      <uri>model://last_finish</uri>
+    </include>
+
+    <include>
+      <name>finish_line</name>
+      <pose>18.75 8.8 8.05 0 0 -1.57</pose>
+      <uri>model://finish_line</uri>
+    </include>
+
+
+    <include>
+      <name>roof_first</name>
+      <pose>8.85 8.85 2.5 0 0 0</pose>
+      <uri>model://maze_roof_first</uri>
+    </include>
+    <include>
+      <name>roof_second</name>
+      <pose>8.85 8.85 10.5 0 0 0</pose>
+      <uri>model://maze_roof_first</uri>
+    </include>
+
+
+    <include>
+      <name>stair_cover</name>
+      <pose>-3 8.05 0.05 0 0 3.14</pose>
+      <uri>model://stair_cover_box</uri>
+    </include>
+
+  </model>
+</sdf>

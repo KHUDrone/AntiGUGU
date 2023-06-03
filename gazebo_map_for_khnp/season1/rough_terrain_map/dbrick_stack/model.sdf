@@ -1,0 +1,348 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="dbrick_stack">
+
+
+    <include>
+      <name>d0</name>
+      <pose frame=''>-0.159002 -0.204749 0.29849 0.000197 -1.3e-05 0.000845</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d1</name>
+      <pose frame=''>0 -0.459723 2.04849 0.000197 -1.3e-05 0.000845</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d3</name>
+      <pose frame=''>-0.39794 0.02585 2.04849 0.000197 -1.3e-05 0.000845</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d4</name>
+      <pose frame=''>-0.1629 -0.39564 1.79849 0.000197 -1.3e-05 0.000845</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d6</name>
+      <pose frame=''>-0.175951 0.107717 0.774998 -1.5708 -2e-05 -0.003486</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d7</name>
+      <pose frame=''>-0.455829 -0.13263 0.774998 -1.5708 -2e-05 -0.003486</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d9</name>
+      <pose frame=''>-0.314268 -0.109297 2.304224 -0.581093 -4e-06 -0.062141</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d10</name>
+      <pose frame=''>0.060434 -0.383261 2.554224 -0.581093 -4e-06 -0.062141</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d11</name>
+      <pose frame=''>0.15144 -0.117381 2.330433 1.25558 0.376008 0.279887</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d12</name>
+      <pose frame=''>0.171229 0.023884 2.080433 1.25558 0.376008 0.279887</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d14</name>
+      <pose frame=''>-0.416178 -0.145607 2.330433 1.25558 0.376008 0.279887</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d16</name>
+      <pose frame=''>-0.384418 0.18962 2.6074 -1.47754 -0.315178 -0.823493</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d18</name>
+      <pose frame=''>0.528574 -0.127156 0.320548 1.57083 0.543761 0.363115</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d20</name>
+      <pose frame=''>0.434794 0.370416 0.575004 -1.57068 2.7e-05 -1.80586</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d21</name>
+      <pose frame=''>0.731074 -0.160918 2.574998 -1.57084 1e-05 -1.80522</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d22</name>
+      <pose frame=''>-0.537357 0 0.824999 -1.57083 0 -1.80383</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d24</name>
+      <pose frame=''>-0.482431 0.202994 2.525 -1.57078 -8e-06 -0.102342</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d26</name>
+      <pose frame=''>0.479081 0.35788 1.775 -1.57078 -8e-06 -0.102342</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d27</name>
+      <pose frame=''>-0.58793 0.354508 1.549822 -2.24338 0.000538 0.942008</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d30</name>
+      <pose frame=''>0.43375 -0.336843 1.049822 -2.24338 0.000538 0.942008</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d31</name>
+      <pose frame=''>1 -0.405395 1.299822 -2.24338 0.000538 0.942008</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d32</name>
+      <pose frame=''>0.667152 0.330834 0.348492 -1.2e-05 9e-06 -0.219058</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d35</name>
+      <pose frame=''>-0.076411 0.319029 2.056619 -1.5708 -0.356957 -0.09265</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d36</name>
+      <pose frame=''>1 0 0.806619 -1.5708 -0.356957 -0.09265</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d37</name>
+      <pose frame=''>0.867278 -0.322243 0.806619 -1.5708 -0.356957 -0.09265</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d38</name>
+      <pose frame=''>0.627216 0.18901 0.806619 -1.5708 -0.356957 -0.09265</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d41</name>
+      <pose frame=''>1 0 1.072452 1.57089 0.572042 0.391576</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d42</name>
+      <pose frame=''>0.942236 0.385775 1.322452 1.57089 0.572042 0.391576</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d44</name>
+      <pose frame=''>0.404892 0.46886 1.099675 3.13965 0.733785 3.09129</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d45</name>
+      <pose frame=''>-0.154358 0.490646 0.849675 3.13965 0.733785 3.09129</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d47</name>
+      <pose frame=''>0.690469 -0.05407 2.599675 3.13965 0.733785 3.09129</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d48</name>
+      <pose frame=''>1.19427 -0.330485 0.324998 1.57085 0.000157 -1.03299</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d50</name>
+      <pose frame=''>-0.716187 -0.285831 0.574998 1.57085 0.000157 -1.03299</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d52</name>
+      <pose frame=''>1.36508 -0.266131 0.824998 1.57085 0.000157 -1.03299</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d53</name>
+      <pose frame=''>0.824242 -0.394745 2.347201 -0.459369 0.338975 -0.627792</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d57</name>
+      <pose frame=''>0.506639 0 0.774998 1.57084 -1e-06 0.27518</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d58</name>
+      <pose frame=''>0.493977 0.442686 1.274998 1.57084 -1e-06 0.27518</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d59</name>
+      <pose frame=''>-0.572985 0 1.524998 1.57084 -1e-06 0.27518</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d65</name>
+      <pose frame=''>-0.56474 0 1.100581 -1.59577 -0.404556 -1.97374</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d68</name>
+        <pose frame=''>-0.208238 0.552925 1.025 1.5708 -0 2.36808</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d71</name>
+        <pose frame=''>-0.133609 -0.183068 2.0485 1.1e-05 -0 -0.672185</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d72</name>
+        <pose frame=''>0.833594 -0.521409 0.824998 1.57083 -8e-06 -0.192502</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d75</name>
+        <pose frame=''>-0.181742 0.085627 1.524822 -1.57076 -0 0.018671</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d78</name>
+        <pose frame=''>0.354362 -0.145673 1.048498 -3.14158 -2e-05 0.220302</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d79</name>
+        <pose frame=''>0.210105 -0.329515 1.275 1.5708 0 0.203738</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d81</name>
+        <pose frame=''>-0.321636 0.094184 1.598508 0.000201 0.000142 0.166547</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d82</name>
+        <pose frame=''>0.235621 -0.087015 1.095 -1.36001 1.57079 -2.59197</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d86</name>
+        <pose frame=''>1.01615 0.036061 1.7985 -2e-06 -1e-06 0.337811</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d88</name>
+        <pose frame=''>1.22383 -0.303206 0.525 1.5708 0 0.281377</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d89</name>
+        <pose frame=''>-0.015842 0.475256 1.074997 1.57079 -2.7e-05 0.20017</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d91</name>
+        <pose frame=''>1.59558 0.00116 1.575004 1.57097 -1.7e-05 -0.507954</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d95</name>
+        <pose frame=''>1.19095 -0.377221 0.574988 1.57075 4.1e-05 -1.13744</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d99</name>
+        <pose frame=''>0.667545 0.296599 1.275 1.5708 -0 -1.60203</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d103</name>
+        <pose frame=''>-0.552824 0.085082 0.275 -1.57079 -0 -0.557269</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d104</name>
+        <pose frame=''>-0.50259 -0.403103 2.025 -1.5708 -0 -0.976965</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d106</name>
+        <pose frame=''>-0.185448 -0.370894 2.275 -1.5708 -0 -0.163132</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d107</name>
+        <pose frame=''>-0.496511 0.236222 2.274996 -1.57082 3.5e-05 -0.016629</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d113</name>
+        <pose frame=''>1.09893 0.293439 0.775 -1.5708 -0 0.871658</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d115</name>
+        <pose frame=''>-0.10053 0.333621 0.298387 -3.14159 -2.1e-05 0.035533</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d117</name>
+        <pose frame=''>0.683731 0.504059 1.774997 -1.5708 -3.5e-05 -0.007809</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d121</name>
+        <pose frame=''>0.626777 -0.065599 1.025002 -1.57078 1.2e-05 -3.13012</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d122</name>
+        <pose frame=''>-0.761473 -0.002589 1.7985 0 -0 -2.01795</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d123</name>
+        <pose frame=''>0.421123 0.246138 0.825047 -0.145107 0.26852 -0.764897</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d125</name>
+        <pose frame=''>0.299765 -0.209694 1.7985 -4e-06 1e-06 0.200864</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d126</name>
+        <pose frame=''>-0.658381 -0.134313 1.048502 -6.1e-05 -0 -1.24975</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d129</name>
+        <pose frame=''>0.83533 0.525416 0.802502 -1.63733 -0.270351 -1.66961</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d131</name>
+        <pose frame=''>0.212065 -0.348149 1.348501 2e-05 2.3e-05 -1.56638</pose>
+      <uri>model://dbrick</uri>
+    </include>
+    <include>
+      <name>d134</name>
+        <pose frame=''>0.468161 -0.645843 0.819192 -1.80835 0.390523 -2.01871</pose>
+      <uri>model://dbrick</uri>
+    </include>
+
+  </model>
+</sdf>

@@ -1,0 +1,153 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="task_3_whole">
+
+
+    <include>
+      <pose>0.923 0.52 0.42 0 1.5708 0</pose>
+      <uri>model://disturbance_1_false</uri>
+    </include>
+    <include>
+      <pose>6.923 0.52 0.42 0 1.5708 0</pose>
+      <uri>model://disturbance_2_false</uri>
+    </include>
+    <include>
+      <pose>12.923 0.52 0.42 0 1.5708 0</pose>
+      <uri>model://disturbance_3_false</uri>
+    </include>
+    <include>
+      <pose>18.923 0.52 0.42 0 1.5708 0</pose>
+      <uri>model://disturbance_4_false</uri>
+    </include>
+    <include>
+      <pose>24.923 0.52 0.42 0 1.5708 0</pose>
+      <uri>model://disturbance_5_false</uri>
+    </include>
+
+
+    <include>
+      <name>floorx</name>
+      <pose>15 2 0 0 0 0</pose>
+      <uri>model://floor_30m</uri>
+    </include>
+
+    <include>
+      <name>floorb</name>
+      <pose>15 0 0 0 0 0</pose>
+      <uri>model://floor_30m</uri>
+    </include>
+
+    <include>
+      <name>s1</name>
+      <pose>1.5 0 0 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s2</name>
+      <pose>7.5 0 0 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s3</name>
+      <pose>13.5 0 0 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s4</name>
+      <pose>19.5 0 0 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s5</name>
+      <pose>25.5 0 0 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+
+    <include>
+      <name>f1</name>
+      <pose>5 0 0 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f2</name>
+      <pose>11 0 0 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f3</name>
+      <pose>17 0 0 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f4</name>
+      <pose>23 0 0 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f5</name>
+      <pose>29 0 0 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+
+
+    <include>
+      <name>w1</name>
+      <pose>1 0 0.005 0 0 0</pose>
+      <uri>model://floor_2_concrete</uri>
+    </include>
+    <include>
+      <name>w2</name>
+      <pose>6.8 0 0.005 0 0 0</pose>
+      <uri>model://floor_2.2_concrete</uri>
+    </include>
+    <include>
+      <name>w3</name>
+      <pose>12.8 0 0.005 0 0 0</pose>
+      <uri>model://floor_2.2_concrete</uri>
+    </include>
+    <include>
+      <name>w4</name>
+      <pose>18.8 0 0.005 0 0 0</pose>
+      <uri>model://floor_2.2_concrete</uri>
+    </include>
+    <include>
+      <name>w5</name>
+      <pose>24.8 0 0.005 0 0 0</pose>
+      <uri>model://floor_2.2_concrete</uri>
+    </include>
+    <include>
+      <name>w6</name>
+      <pose>29.85 0 0.005 0 0 0</pose>
+      <uri>model://floor_0.3_concrete</uri>
+    </include>
+
+
+    <include>
+      <name>q1</name>
+      <pose>1 0.525 0 0 0 0</pose>
+      <uri>model://qr_pole</uri>
+    </include>
+    <include>
+      <name>q2</name>
+      <pose>7 0.525 0 0 0 0</pose>
+      <uri>model://qr_pole</uri>
+    </include>
+    <include>
+      <name>q3</name>
+      <pose>13 0.525 0 0 0 0</pose>
+      <uri>model://qr_pole</uri>
+    </include>
+    <include>
+      <name>q4</name>
+      <pose>19 0.525 0 0 0 0</pose>
+      <uri>model://qr_pole</uri>
+    </include>
+    <include>
+      <name>q5</name>
+      <pose>25 0.525 0 0 0 0</pose>
+      <uri>model://qr_pole</uri>
+    </include>
+
+
+  </model>
+</sdf>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="new_stairs">
+    <pose>0 0 0 0 0 0</pose>
+    <link name="link">
+      <collision name="new_stairsC">
+        <geometry>
+          <mesh>
+            <uri>model://new_stairs/model2.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="new_stairsV">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://new_stairs/model2.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

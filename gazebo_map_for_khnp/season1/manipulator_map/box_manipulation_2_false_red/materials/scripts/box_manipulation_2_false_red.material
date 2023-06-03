@@ -1,0 +1,16 @@
+material vrc/box_manipulation_2_false_red
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture box_manipulation_2_false_red.png
+				filtering anistropic
+				max_anisotropy 16
+				scale 1 1
+			}
+		}
+	}
+}

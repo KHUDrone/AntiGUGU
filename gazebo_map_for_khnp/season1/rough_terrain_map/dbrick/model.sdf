@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="dbrick">
+    <static>false</static>
+    <self_collide>true</self_collide>
+    <link name="link">
+      <inertial>
+        <mass>2.0</mass>
+          <inertia>
+            <ixx>1.984833e-2</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>6.433333e-2</iyy>
+            <iyz>0.0</iyz>
+            <izz>7.584833e-2</izz>
+          </inertia>
+      </inertial>
+      <collision name="dbrickC">
+        <geometry>
+          <box>
+            <size>0.19 0.05 0.097</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="dbrickV">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>0.19 0.05 0.097</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://dbrick/materials/scripts</uri>
+            <uri>model://dbrick/materials/textures</uri>
+            <name>vrc/dbrick</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

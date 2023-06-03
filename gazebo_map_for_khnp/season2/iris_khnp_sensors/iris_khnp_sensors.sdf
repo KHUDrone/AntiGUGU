@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name='iris_khnp_sensors'>
+
+    <include>
+      <uri>model://iris_khnp</uri>
+    </include>
+
+
+    <include>
+      <uri>model://d435i</uri>
+      <pose>0.05 0 0 0 0 0</pose>
+    </include>
+    <joint name="d435_cam_joint" type="fixed">
+      <child>d435i::camera_link</child>
+      <parent>iris_khnp::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

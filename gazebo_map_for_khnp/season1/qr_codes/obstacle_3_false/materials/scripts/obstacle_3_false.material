@@ -1,0 +1,17 @@
+material vrc/obstacle_3_false
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture obstacle,3,false.png
+				filtering anistropic
+				max_anisotropy 16
+				scale 1 1 
+			}
+		}
+	}
+}

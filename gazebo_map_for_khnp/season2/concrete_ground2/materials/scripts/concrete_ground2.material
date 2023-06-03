@@ -1,0 +1,17 @@
+material vrc/concrete_ground2
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture asphalt.png
+				filtering anistropic
+				max_anisotropy 16
+				scale 0.3 0.3
+			}
+		}
+	}
+}

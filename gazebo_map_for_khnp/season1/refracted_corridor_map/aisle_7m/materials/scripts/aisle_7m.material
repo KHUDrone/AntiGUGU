@@ -1,0 +1,18 @@
+material vrc/aisle_7m
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			ambient 0.45 0.45 0.45 1.0
+			texture_unit
+			{
+				texture bumpy.jpg
+				filtering anistropic
+				max_anisotropy 16
+				scale 0.4 0.2
+			}
+		}
+	}
+}

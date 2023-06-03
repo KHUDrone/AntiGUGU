@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="corridor_map">
+
+
+    <include>
+      <pose>2.25 0.515 0.42 0 1.5708 0</pose>
+      <uri>model://corridor_1_false</uri>
+    </include>
+    <include>
+      <pose>7.25 -9.475 0.42 0 1.5708 0</pose>
+      <uri>model://corridor_2_false</uri>
+    </include>
+    <include>
+      <pose>12.25 -2.475 0.42 0 1.5708 0</pose>
+      <uri>model://corridor_3_false</uri>
+    </include>
+    <include>
+      <pose>17.25 -7.475 0.42 0 1.5708 0</pose>
+      <uri>model://corridor_4_false</uri>
+    </include>
+    <include>
+      <pose>22.25 -0.475 0.42 0 1.5708 0</pose>
+      <uri>model://corridor_5_false</uri>
+    </include>
+
+    <include>
+      <name>po1</name>
+      <pose>2.325 0.515 0 0 0 0</pose>
+      <uri>model://qr_pole2</uri>
+    </include>
+    <include>
+      <name>po2</name>
+      <pose>7.325 -9.475 0 0 0 0</pose>
+      <uri>model://qr_pole2</uri>
+    </include>
+    <include>
+      <name>po3</name>
+      <pose>12.325 -2.475 0 0 0 0</pose>
+      <uri>model://qr_pole2</uri>
+    </include>
+    <include>
+      <name>po4</name>
+      <pose>17.325 -7.475 0 0 0 0</pose>
+      <uri>model://qr_pole2</uri>
+    </include>
+    <include>
+      <name>po5</name>
+      <pose>22.325 -0.475 0 0 0 0</pose>
+      <uri>model://qr_pole2</uri>
+    </include>
+
+
+
+    <include>
+      <uri>model://first_start</uri>
+    </include>
+
+    <include>
+      <uri>model://corridor_ground_topping</uri>
+    </include>
+    <include>
+      <uri>model://roof_first</uri>
+    </include>
+<!--    <include>-->
+<!--      <uri>model://cwalls</uri>-->
+<!--    </include>-->
+    <include>
+      <uri>model://corridor_walls</uri>
+    </include>
+
+    <include>
+      <name>s1</name>
+      <pose>3.25 0.00 0.03 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s2</name>
+      <pose>8.25 -10.0 0.03 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s3</name>
+      <pose>13.25 -3.0 0.03 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s4</name>
+      <pose>18.25 -8.0 0.03 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+    <include>
+      <name>s5</name>
+      <pose>23.25 -1.0 0.03 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+
+    <include>
+      <name>f1</name>
+      <pose>5.65 -10.0 0.03 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f2</name>
+      <pose>10.65 -3.0 0.03 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f3</name>
+      <pose>15.65 -8.0 0.03 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f4</name>
+      <pose>20.65 -1.0 0.03 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+    <include>
+      <name>f5</name>
+      <pose>25.65 -6.0 0.03 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+
+  </model>
+</sdf>

@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="task2_whole_new">
+
+    <include>
+      <name>task2_revision</name>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://task2_revision</uri>
+    </include>
+    
+    <include>
+      <name>hill</name>
+      <pose>4.35 0.6 0 0 0 1.57</pose>
+      <uri>model://hill</uri>
+    </include>
+
+
+    <include>
+      <name>stepping_stone</name>
+      <pose>8.5 1.58 -0.4 0 0 1.57</pose>
+      <uri>model://stepping_stone</uri>
+    </include>
+
+    <include>
+      <name>wall_5_2_1</name>
+      <pose>11.1 -0.475 0.5 0 0 0</pose>
+      <uri>model://wall_5_2</uri>
+    </include>
+    <include>
+      <name>wall_6_1</name>
+      <pose>16.7 -0.075 0.5 0 0 0</pose>
+      <uri>model://wall_6</uri>
+    </include>
+    <include>
+      <name>wall_8_5_1</name>
+      <pose>4.25 -0.075 0.5 0 0 0</pose>
+      <uri>model://wall_8_5</uri>
+    </include>
+
+    <include>
+      <name>wall_5_2_2</name>
+      <pose>11.1 1.675 0.5 0 0 0</pose>
+      <uri>model://wall_5_2</uri>
+    </include>
+    <include>
+      <name>wall_6_2</name>
+      <pose>16.7 1.275 0.5 0 0 0</pose>
+      <uri>model://wall_6</uri>
+    </include>
+    <include>
+      <name>wall_8_5_2</name>
+      <pose>4.25 1.275 0.5 0 0 0</pose>
+      <uri>model://wall_8_5</uri>
+    </include>
+
+    <include>
+      <name>floor_5_2</name>
+      <pose>11.1 0.6 -0.476 1.57 0 0</pose>
+      <uri>model://floor_5_2</uri>
+    </include>
+    <include>
+      <name>floor_6</name>
+      <pose>16.7 0.6 -0.076 1.57 0 0</pose>
+      <uri>model://floor_6</uri>
+    </include>
+    <include>
+      <name>floor_8_5</name>
+      <pose>4.25 0.6 -0.076 1.57 0 0</pose>
+      <uri>model://floor_8_5</uri>
+    </include>
+
+    <include>
+      <name>wall_0_4_1</name>
+      <pose>8.425 -0.35 0.5 0 0 1.57</pose>
+      <uri>model://wall_0_4</uri>
+    </include>
+    <include>
+      <name>wall_0_4_2</name>
+      <pose>13.775 -0.35 0.5 0 0 1.57</pose>
+      <uri>model://wall_0_4</uri>
+    </include>
+    <include>
+      <name>wall_0_4_3</name>
+      <pose>8.425 1.55 0.5 0 0 1.57</pose>
+      <uri>model://wall_0_4</uri>
+    </include>
+    <include>
+      <name>wall_0_4_4</name>
+      <pose>13.775 1.55 0.5 0 0 1.57</pose>
+      <uri>model://wall_0_4</uri>
+    </include>
+
+
+
+    <include>
+      <pose>1.51 1.12 0.42 0 1.5708 0</pose>
+      <uri>model://obstacle_1_false</uri>
+    </include>
+    <include>
+      <pose>7.42 1.12 0.42 0 1.5708 0</pose>
+      <uri>model://obstacle_2_false</uri>
+    </include>
+    <include>
+      <pose>15.275 1.12 0.42 0 1.5708 0</pose>
+      <uri>model://obstacle_3_false</uri>
+    </include>
+
+
+    <include>
+      <name>column1</name>
+      <pose>1.585 1.12 0.25 0 0 0</pose>
+      <uri>model://qr_pole3</uri>
+    </include>
+    <include>
+      <name>column2</name>
+      <pose>7.495 1.12 0.25 0 0 0</pose>
+      <uri>model://qr_pole3</uri>
+    </include>
+    <include>
+      <name>column3</name>
+      <pose>15.35 1.12 0.25 0 0 0</pose>
+      <uri>model://qr_pole3</uri>
+    </include>
+
+
+
+    <include>
+      <name>dbrick_static</name>
+      <pose>17.8 0.6 0 0 0 0</pose>
+      <uri>model://dbrick_static</uri>
+    </include>
+
+    <include>
+      <name>s1</name>
+      <pose>2.05 0.6 0.01 0 0 -1.5708</pose>
+      <uri>model://start_line_short</uri>
+    </include>
+    <include>
+      <name>s2</name>
+      <pose>7.94 0.6 0.01 0 0 -1.5708</pose>
+      <uri>model://start_line_short</uri>
+    </include>
+    <include>
+      <name>s3</name>
+      <pose>16.0 0.6 0.01 0 0 -1.5708</pose>
+      <uri>model://start_line</uri>
+    </include>
+
+    <include>
+      <name>f1</name>
+      <pose>5.5 0.6 0.01 0 0 -1.5708</pose>
+      <uri>model://finish_line_short</uri>
+    </include>
+    <include>
+      <name>f2</name>
+      <pose>13.7 0.6 0.01 0 0 -1.5708</pose>
+      <uri>model://finish_line_short</uri>
+    </include>
+    <include>
+      <name>f3</name>
+      <pose>18.55 0.6 0.01 0 0 -1.5708</pose>
+      <uri>model://finish_line</uri>
+    </include>
+
+  </model>
+</sdf>

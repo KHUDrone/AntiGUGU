@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="bookcase">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+    <link name="link">
+      <collision name="bookcaseC">
+        <geometry>
+          <mesh>
+            <uri>model://bookcase/untitled.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="bookcaseV">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://bookcase/untitled.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="wall_obstacleB">
+
+    <include>
+      <name>big1</name>
+      <pose>0 0 0 0 0 1.5708</pose>
+      <uri>model://wall_obs_big</uri>
+    </include>
+
+    <include>
+      <name>small1</name>
+      <pose>-0.625 0 0.75 0 0 1.5708</pose>
+      <uri>model://wall_obs_small</uri>
+    </include>
+
+    <include>
+      <name>small2</name>
+      <pose>0.625 0 0.75 0 0 1.5708</pose>
+      <uri>model://wall_obs_small</uri>
+    </include>
+
+    <include>
+      <name>big2</name>
+      <pose>0 0 1.75 0 0 1.5708</pose>
+      <uri>model://wall_obs_big</uri>
+    </include>
+  </model>
+</sdf>
