@@ -12,9 +12,17 @@
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/LaserScan.h>
 
+
+const int wait_thres = 10;
+const int bird_wait_thres = 20;
+
 int step = 0;
 double average = 0;
-int cnt_clk=1;
+int cnt_clk=0;
+bool move_flag = 1;
+bool bird_flag = 0;
+int last_home = 0;
+float bird_cnt=0.0;
 
 //publisher
 //geographic_msgs::GeoPoseStamped target_pose; //for global
@@ -202,14 +210,7 @@ int main(int argc, char **argv)
 
         //201 --> x 5 y 6
         //201 - (4,1) --> x 1 y 4 z 1.5
-        //QR detected     
-        if(QR_loc.x && QR_loc.y){
-            cnt_clk++;
-            ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
-        }
     
-
-
         //takeoff        
         if(step==0){
             target_pose.pose.position.x = 1;
@@ -219,74 +220,145 @@ int main(int argc, char **argv)
             if(current_pose.z>=1.8){step=1;}
         }
         
-        //go upside
-        if(step==1){
-            if(average>4)
-            {
-                target_pose.pose.position.x = current_pose.x + 0.5;
-            }
-            else if(average<1)
-            {
-                target_pose.pose.position.x = current_pose.x - 0.5;
-            }
-            target_pose.pose.position.y = 4;
-            target_pose.pose.position.z = current_pose.z + 1.0;
-            move_pub.publish(target_pose);
+        
+        if(!move_flag){
+            cnt_clk++;
+            bird_cnt  = bird_cnt + server_data.z;
 
+            //Maintain drone attitude 
+            if(average>4){
+                {
+                    target_pose.pose.position.x = current_pose.x + 0.5;
+                }
+                else if(average<1)
+                {
+                    target_pose.pose.position.x = current_pose.x - 0.5;
+                }
+            }
+            target_pose.pose.position.y = QR_loc.x;
+            target_pose.pose.position.z = QR_loc.y;
+            move_pub.publish(target.pose);
 
-            if(current_pose.z>=8.5){step=2;}
+            //checking bird 
+            if(cnt_clk > wait_thres){
+                move_flag=1;
+
+                bird_cnt /= cnt_clk;
+
+                if(bird_cnt>0.4){
+                    bird_flag=1;
+                    cnt_clk=0;
+                }
+            }
         }
-
-        //go rightsie
-        if(step ==2){
-            if(average>4)
-            {
-                target_pose.pose.position.x = current_pose.x + 0.5;
-            }
-            else if(average<1)
-            {
-                target_pose.pose.position.x = current_pose.x - 0.5;
-            }
-            target_pose.pose.position.y = current_pose.y-1.0;
-            target_pose.pose.position.z =8.5;
-            move_pub.publish(target_pose);
-
-
-            if(current_pose.y<=1.7){step=3;}
-        }
-
-        //go downside
-        if(step == 3){
-            if(average>4)
-            {
-                target_pose.pose.position.x = current_pose.x + 0.5;
-            }
-            else if(average<1)
-            {
-                target_pose.pose.position.x = current_pose.x - 0.5;
-            }
-            target_pose.pose.position.y = 2;
-            target_pose.pose.position.z = current_pose.z - 1.0;
-            move_pub.publish(target_pose);
+        else if(bird_flag){
+            cnt_clk++;
 
             
-            if(current_pose.z<= 1.5){step=4;}
+            //Maintain drone attitude 
+            if(average>4){
+                {
+                    target_pose.pose.position.x = current_pose.x + 0.5;
+                }
+                else if(average<1)
+                {
+                    target_pose.pose.position.x = current_pose.x - 0.5;
+                }
+            }
+            target_pose.pose.position.y = QR_loc.x;
+            target_pose.pose.position.z = QR_loc.y;
+            move_pub.publish(target.pose);
+
+            //wait for drone 
+            if(cnt_clk>bird_wait_thres){
+                bird_flag=0;
+            }
         }
-        
-        //land on
-        if(step==4)
-        {   
-            if(average>4)
-            {
-                target_pose.pose.position.x = current_pose.x + 0.5;
+        else {
+            //go upside
+            if(step==1){
+                if(average>4)
+                {
+                    target_pose.pose.position.x = current_pose.x + 0.5;
+                }
+                else if(average<1)
+                {
+                    target_pose.pose.position.x = current_pose.x - 0.5;
+                }
+                target_pose.pose.position.y = 4;
+                target_pose.pose.position.z = current_pose.z + 0.7;
+                move_pub.publish(target_pose);
+
+                if(QR_loc.x && QR_loc.y && last_home != server_data.x){
+                    move_flag=0;
+                    cnt_clk=0;
+                    bird_cnt=0;
+                    last_home = server_data.x;
+                }
+                
+                if(current_pose.z>=8.5){step=2;}
             }
-            else if(average<1)
-            {
-                target_pose.pose.position.x = current_pose.x - 0.5;
+
+            //go rightsie
+            if(step ==2){
+                if(average>4)
+                {
+                    target_pose.pose.position.x = current_pose.x + 0.5;
+                }
+                else if(average<1)
+                {
+                    target_pose.pose.position.x = current_pose.x - 0.5;
+                }
+                target_pose.pose.position.y = current_pose.y-0.7;
+                target_pose.pose.position.z =8.5;
+                move_pub.publish(target_pose);
+
+
+                if(current_pose.y<=1.7){step=3;}
             }
-            target_pose.pose.position.y = -8;
-            target_pose.pose.position.z = 0;
-            move_pub.publish(target_pose);           
+
+            //go downside
+            if(step == 3){
+                if(average>4)
+                {
+                    target_pose.pose.position.x = current_pose.x + 0.5;
+                }
+                else if(average<1)
+                {
+                    target_pose.pose.position.x = current_pose.x - 0.5;
+                }
+
+                // avoid specific height for privacy (3~6m) 
+                if(current_pose.z<=6 && current_pose.z>=3){target_pose.pose.position.y = 4;}
+                else{ target_pose.pose.position.y = 2;}               
+                target_pose.pose.position.z = current_pose.z - 0.7;
+                move_pub.publish(target_pose);
+
+                if(QR_loc.x && QR_loc.y && last_home != server_data.x){
+                    move_flag=0;
+                    cnt_clk=0;
+                    bird_cnt=0;
+                    last_home = server_data.x;
+                } 
+                
+                if(current_pose.z<= 1.5){step=4;}
+            }
+            
+            //land on
+            if(step==4)
+            {   
+                if(average>4)
+                {
+                    target_pose.pose.position.x = current_pose.x + 0.5;
+                }
+                else if(average<1)
+                {
+                    target_pose.pose.position.x = current_pose.x - 0.5;
+                }
+                target_pose.pose.position.y = -8;
+                target_pose.pose.position.z = 0;
+                move_pub.publish(target_pose);           
+            }
         }
 
         //QR 검출 -> 동과 호수 => 401이면 옆으로가기, 402면 아래로 가기 시작
