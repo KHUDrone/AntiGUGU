@@ -13,7 +13,7 @@
 #include <sensor_msgs/LaserScan.h>
 
 int step = 0;
-int cnt_clk=0;
+int cnt_clk=1;
 
 //publisher
 //geographic_msgs::GeoPoseStamped target_pose; //for global
@@ -194,8 +194,15 @@ int main(int argc, char **argv)
 
         //201 --> x 5 y 6
         //201 - (4,1) --> x 1 y 4 z 1.5
-        
-        //takeoff
+        //QR detected     
+        if(QR_loc.x && QR_loc.y){
+            cnt_clk++;
+            ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
+        }
+    
+
+
+        //takeoff        
         if(step==0){
             target_pose.pose.position.x = 1;
             target_pose.pose.position.y = 4;
@@ -211,10 +218,7 @@ int main(int argc, char **argv)
             target_pose.pose.position.z = current_pose.z + 1.0;
             move_pub.publish(target_pose);
 
-            //QR detected
-            if(QR_loc.x && QR_loc.y){
-                ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
-            }
+
             if(current_pose.z>=8.5){step=2;}
         }
 
@@ -224,10 +228,7 @@ int main(int argc, char **argv)
             target_pose.pose.position.y = current_pose.y-1.0;
             target_pose.pose.position.z =8.5;
             move_pub.publish(target_pose);
-            //QR detection func
-             if(QR_loc.x && QR_loc.y){
-                ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
-            }
+
 
             if(current_pose.y<=1.7){step=3;}
         }
@@ -238,10 +239,7 @@ int main(int argc, char **argv)
             target_pose.pose.position.y = 2;
             target_pose.pose.position.z = current_pose.z - 1.0;
             move_pub.publish(target_pose);
-            //QR detection func
-             if(QR_loc.x && QR_loc.y){
-                ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
-            }
+
             
             if(current_pose.z<= 1.5){step=4;}
         }
@@ -254,6 +252,7 @@ int main(int argc, char **argv)
             target_pose.pose.position.z = 0;
             move_pub.publish(target_pose);           
         }
+        
         //QR 검출 -> 동과 호수 => 401이면 옆으로가기, 402면 아래로 가기 시작
         //
 
