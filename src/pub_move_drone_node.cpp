@@ -23,6 +23,8 @@ geometry_msgs::PoseStamped target_pose; //for local
 //subscriber
 mavros_msgs::State current_state;
 geometry_msgs::Point current_pose;
+geometry_msgs::Point QR_loc;
+geometry_msgs::Point server_data;
 sensor_msgs::LaserScan lidar_scan;
 
 // void target_cb(const geographic_msgs::GeoPoseStamped msg){
@@ -54,10 +56,10 @@ void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
 
 void recv_laser(const sensor_msgs::LaserScan msg){
     lidar_scan = msg;
-    for (int i=30; i<60; i++)
-    {
-         ROS_INFO("%f",lidar_scan.ranges[i]);
-    }
+    // for (int i=30; i<60; i++)
+    // {
+    //      ROS_INFO("%f",lidar_scan.ranges[i]);
+    // }
 //    ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
 }
 
@@ -70,9 +72,14 @@ void local_cb(const geometry_msgs::PoseStamped msg ){
 	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
 }
 
-void local_cb(const geometry_msgs::PoseStamped msg ){
-	current_pose = msg.pose.position;
-	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
+void QR_cb(const geometry_msgs::PoseStamped msg ){
+	QR_loc = msg.pose.position;
+	ROS_INFO("QR loc(x,y): %4.2f, %4.2f\n", QR_loc.x, QR_loc.y);
+}
+
+void server_cb(const geometry_msgs::PoseStamped msg ){
+	server_data = msg.pose.position;
+	ROS_INFO("Current : %4.2f, Next : %4.2f, BIRD %4.2f\n",server_data.x, server_data.y, server_data.z);
 }
 
 int main(int argc, char **argv)
@@ -90,10 +97,12 @@ int main(int argc, char **argv)
    
    //ros::Subscriber target_alt_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting_alt",1,target_alt_cb);
    //ros::Subscriber target_sub = n.subscribe<geometry_msgs::PoseStamped>("targeting",10,target_cb);
+   //ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
+
    ros::Subscriber state_sub = n.subscribe<mavros_msgs::State>("mavros/state", 1, state_cb);
    ros::Subscriber lidar_sub = n.subscribe<sensor_msgs::LaserScan>("/laser/scan",1, recv_laser);
-   ros::Subscriber target_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting",1,target_cb); //for global
-   //ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
+   ros::Subscriber QR_loc_sub = n.subscribe<geometry_msgs::PoseStamped>("/server/QR_locating",1,QR_cb);
+   ros::Subscriber server_data_sub = n.subscribe<geometry_msgs::PoseStamped>("/server/data",1,server_cb);
    ros::Subscriber local_sub = n.subscribe<geometry_msgs::PoseStamped>("/mavros/local_position/pose", 1, local_cb);
 
    //servicesClient
