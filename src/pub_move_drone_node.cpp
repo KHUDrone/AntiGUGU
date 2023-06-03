@@ -73,9 +73,6 @@ void recv_laser(const sensor_msgs::LaserScan msg){
         ++count;
     }
     average = sum / count;
-
-    ROS_INFO("%f",average);
-
     //ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
 }
 
@@ -85,17 +82,15 @@ void state_cb(const mavros_msgs::State::ConstPtr msg){
 
 void local_cb(const geometry_msgs::PoseStamped msg ){
 	current_pose = msg.pose.position;
-	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
 }
 
 void QR_cb(const geometry_msgs::PoseStamped msg ){
 	QR_loc = msg.pose.position;
-	ROS_INFO("QR loc(x,y): %4.2f, %4.2f\n", QR_loc.x, QR_loc.y);
 }
 
 void server_cb(const geometry_msgs::PoseStamped msg ){
 	server_data = msg.pose.position;
-	ROS_INFO("HOME : %4.2f, Next : %4.2f, BIRD : %4.2f\n",server_data.x, server_data.y, server_data.z);
+	ROS_INFO("HOME : %4.2f, BIRD : %4.2f\n",server_data.x, server_data.z);
 }
 int main(int argc, char **argv)
 {
@@ -171,7 +166,7 @@ int main(int argc, char **argv)
 
    while(ros::ok()){
         
-       ROS_INFO("Target(x,y,z): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
+       //ROS_INFO("Target(x,y,z): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
        target_pose.header.stamp = ros::Time::now();
        target_pose.header.frame_id = 1;
        
@@ -213,12 +208,12 @@ int main(int argc, char **argv)
     
         //takeoff        
         if(step==0){
-            ROS_INFO("STEP : %d \n", step );
-            target_pose.pose.position.x = 2;
-            target_pose.pose.position.y = 4;
-            target_pose.pose.position.z = 2.1;
+            //ROS_INFO("STEP : %d \n", step );
+            target_pose.pose.position.x = 2.7;
+            target_pose.pose.position.y = 4.7;
+            target_pose.pose.position.z = 1.8;
             move_pub.publish(target_pose);
-            if(current_pose.z>=1.8 && current_pose.y>=3.8 && current_pose.x>=1.7){step=1;}
+            if(current_pose.z>=1.65 && current_pose.y>=4.3 && current_pose.x>=2.5){step=1;}
         }
         
         
@@ -227,7 +222,8 @@ int main(int argc, char **argv)
             bird_cnt  = bird_cnt + server_data.z;
 
             //Maintain drone attitude 
-            if(average>4)
+            
+            if(average>5)
             {
                 target_pose.pose.position.x = current_pose.x + 0.2;
             }
@@ -235,6 +231,7 @@ int main(int argc, char **argv)
             {
                 target_pose.pose.position.x = current_pose.x - 0.5;
             }
+            if(target_pose.pose.position.x<2.2 || target_pose.pose.position.x<3.2) target_pose.pose.position.x = 2.7;
 
             
             // target_pose.pose.position.y = QR_loc.x;
@@ -258,9 +255,9 @@ int main(int argc, char **argv)
         else if(bird_flag){
             cnt_clk++;
 
-            ROS_INFO("BEEP BEEP GET OUT BIRD!!!");
+            ROS_INFO("BEEP BEEP GET OUT BIRD!!!\nBEEP BEEP GET OUT BIRD!!!\nBEEP BEEP GET OUT BIRD!!!\nBEEP BEEP GET OUT BIRD!!!");
             //Maintain drone attitude 
-            if(average>4)
+            if(average>5)
             {
                 target_pose.pose.position.x = current_pose.x + 0.2;
             }
@@ -273,7 +270,7 @@ int main(int argc, char **argv)
             // target_pose.pose.position.z = QR_loc.y;
             // move_pub.publish(target_pose);
             target_pose.pose.position.y = current_pose.y;
-            target_pose.pose.position.z = current_pose.z + (150-QR_loc.y)/600;
+            target_pose.pose.position.z = current_pose.z + (180-QR_loc.y)/600;
             move_pub.publish(target_pose);
             //wait for drone 
             if(cnt_clk>bird_wait_thres){
@@ -283,8 +280,8 @@ int main(int argc, char **argv)
         else {
             //go upside
             if(step==1){
-                ROS_INFO("STEP : %d \n", step );
-                if(average>4)
+                //ROS_INFO("STEP : %d \n", step );
+                if(average>5)
                 {
                     target_pose.pose.position.x = current_pose.x + 0.2;
                 }
@@ -292,9 +289,9 @@ int main(int argc, char **argv)
                 {
                     target_pose.pose.position.x = current_pose.x - 0.5;
                 }
-
+                if(target_pose.pose.position.x<2.2 || target_pose.pose.position.x<3.2) target_pose.pose.position.x = 2.7;
                 target_pose.pose.position.y = 4;
-                target_pose.pose.position.z = current_pose.z + 0.7;
+                target_pose.pose.position.z = current_pose.z + 1.1;
                 move_pub.publish(target_pose);
 
                 if(QR_loc.x && QR_loc.y && last_home != server_data.x){
@@ -309,8 +306,8 @@ int main(int argc, char **argv)
 
             //go rightsie
             if(step ==2){
-                ROS_INFO("STEP : %d \n", step );
-                if(average>4)
+                //ROS_INFO("STEP : %d \n", step );
+                if(average>5)
                 {
                     target_pose.pose.position.x = current_pose.x + 0.2;
                 }
@@ -318,19 +315,19 @@ int main(int argc, char **argv)
                 {
                     target_pose.pose.position.x = current_pose.x - 0.5;
                 }
-
-                target_pose.pose.position.y = current_pose.y-0.7;
+                if(target_pose.pose.position.x<2.2 || target_pose.pose.position.x<3.2) target_pose.pose.position.x = 2.7;
+                target_pose.pose.position.y = current_pose.y-1.1;
                 target_pose.pose.position.z =9;
                 move_pub.publish(target_pose);
 
 
-                if(current_pose.y<=1.9){step=3;}
+                if(current_pose.y<=2.1){step=3;}
             }
 
             //go downside
             if(step == 3){
-                ROS_INFO("STEP : %d \n", step );
-                if(average>4)
+                //ROS_INFO("STEP : %d \n", step );
+                if(average>5)
                 {
                     target_pose.pose.position.x = current_pose.x + 0.2;
                 }
@@ -338,13 +335,17 @@ int main(int argc, char **argv)
                 {
                     target_pose.pose.position.x = current_pose.x - 0.5;
                 }
-
+                if(target_pose.pose.position.x<2.2 || target_pose.pose.position.x<3.2) target_pose.pose.position.x = 2.7;
                 // avoid specific height for privacy (3~6m) 
                 if(current_pose.z<=6 && current_pose.z>=3 && current_pose.y>0.5){target_pose.pose.position.y = 0;}
-                else if (current_pose.y<0.8) { 
+                else if (current_pose.z>6){
+                    target_pose.pose.position.y = 2;
+                    target_pose.pose.position.z = current_pose.z - 1.1;
+                }
+                else if ( (current_pose.z<3 && current_pose.y<0.8)) { 
                     target_pose.pose.position.y = 2;
                 }     
-                else{target_pose.pose.position.z = current_pose.z - 0.7;}          
+                else{target_pose.pose.position.z = current_pose.z - 1.1;}          
                 move_pub.publish(target_pose);
 
                 if(QR_loc.x && QR_loc.y && last_home != server_data.x){
@@ -360,18 +361,13 @@ int main(int argc, char **argv)
             //land on
             if(step==4)
             {   
-                
-                if(average>4)
-                {
-                    target_pose.pose.position.x = current_pose.x + 0.2;
-                }
-                else if(average<1)
-                {
-                    target_pose.pose.position.x = current_pose.x - 0.5;
-                }
-
+                target_pose.pose.position.x = 0;
                 target_pose.pose.position.y = 0;
-                target_pose.pose.position.z = 0;
+                target_pose.pose.position.z = 2;
+
+                if(abs(current_pose.x) <0.02 && abs(current_pose.y) < 0.02 ){
+                    target_pose.pose.position.z = 0;
+                }
                 move_pub.publish(target_pose);           
             }
         }
