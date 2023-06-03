@@ -13,7 +13,7 @@
 #include <sensor_msgs/LaserScan.h>
 
 int step = 0;
-
+double average = 0;
 
 //publisher
 //geographic_msgs::GeoPoseStamped target_pose; //for global
@@ -23,6 +23,8 @@ geometry_msgs::PoseStamped target_pose; //for local
 //subscriber
 mavros_msgs::State current_state;
 geometry_msgs::Point current_pose;
+geometry_msgs::Point QR_loc;
+geometry_msgs::Point server_data;
 sensor_msgs::LaserScan lidar_scan;
 
 // void target_cb(const geographic_msgs::GeoPoseStamped msg){
@@ -54,12 +56,18 @@ void target_cb(const geometry_msgs::PoseStamped::ConstPtr msg){
 
 void recv_laser(const sensor_msgs::LaserScan msg){
     lidar_scan = msg;
-    ROS_INFO("%d", lidar_scan.ranges.size());
-    // for (int i=30; i<60; i++)
-    // {
-    //      ROS_INFO("%f",lidar_scan.ranges[i]);
-    // }
-//    ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
+    double sum = 0.0;
+    int count = 0;
+    for (int i=30; i<91; ++i)
+    {
+        sum += lidar_scan.ranges[i];
+        ++count;
+    }
+    average = sum / count;
+
+    ROS_INFO("%f",average);
+
+    //ROS_INFO("Current(angle_min,max,increment / range_min, max): %d, %d, %d, %d, %d", lidar_scan.angle_min, lidar_scan.angle_max, lidar_scan.angle_increment, lidar_scan.range_min, lidar_scan.range_max);
 }
 
 void state_cb(const mavros_msgs::State::ConstPtr msg){
@@ -71,9 +79,14 @@ void local_cb(const geometry_msgs::PoseStamped msg ){
 	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",current_pose.x, current_pose.y, current_pose.z);
 }
 
-void target_cb(const geometry_msgs::PoseStamped msg ){
-	current_pose = msg.pose.position;
-	ROS_INFO("Current(x,y,z): %4.2f, %4.2f, %4.2f\n",target_pose.x, target_pose.y, target_pose.z);
+void QR_cb(const geometry_msgs::PoseStamped msg ){
+	QR_loc = msg.pose.position;
+	ROS_INFO("QR loc(x,y): %4.2f, %4.2f\n", QR_loc.x, QR_loc.y);
+}
+
+void server_cb(const geometry_msgs::PoseStamped msg ){
+	server_data = msg.pose.position;
+	ROS_INFO("Current : %4.2f, Next : %4.2f, BIRD %4.2f\n",server_data.x, server_data.y, server_data.z);
 }
 
 int main(int argc, char **argv)
@@ -91,10 +104,12 @@ int main(int argc, char **argv)
    
    //ros::Subscriber target_alt_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting_alt",1,target_alt_cb);
    //ros::Subscriber target_sub = n.subscribe<geometry_msgs::PoseStamped>("targeting",10,target_cb);
+   //ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
+
    ros::Subscriber state_sub = n.subscribe<mavros_msgs::State>("mavros/state", 1, state_cb);
    ros::Subscriber lidar_sub = n.subscribe<sensor_msgs::LaserScan>("/laser/scan",1, recv_laser);
-   ros::Subscriber target_sub = n.subscribe<geographic_msgs::GeoPoseStamped>("targeting",1,target_cb); //for global
-   //ros::Subscriber global_sub = n.subscribe<sensor_msgs::NavSatFix>("/mavros/global_position/global", 1, global_cb);
+   ros::Subscriber QR_loc_sub = n.subscribe<geometry_msgs::PoseStamped>("/server/QR_locating",1,QR_cb);
+   ros::Subscriber server_data_sub = n.subscribe<geometry_msgs::PoseStamped>("/server/data",1,server_cb);
    ros::Subscriber local_sub = n.subscribe<geometry_msgs::PoseStamped>("/mavros/local_position/pose", 1, local_cb);
 
    //servicesClient
@@ -198,7 +213,14 @@ int main(int argc, char **argv)
         
         //go upside
         if(step==1){
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = 4;
             target_pose.pose.position.z = current_pose.z + 1.0;
             move_pub.publish(target_pose);
@@ -208,7 +230,14 @@ int main(int argc, char **argv)
 
         //go rightsie
         if(step ==2){
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = current_pose.y-1.0;
             target_pose.pose.position.z =8.5;
             move_pub.publish(target_pose);
@@ -218,7 +247,14 @@ int main(int argc, char **argv)
 
         //go downside
         if(step == 3){
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = -8;
             target_pose.pose.position.z = current_pose.z - 1.0;
             move_pub.publish(target_pose);
@@ -229,11 +265,19 @@ int main(int argc, char **argv)
         //land on
         if(step==4)
         {   
-            target_pose.pose.position.x = 1;
+            if(average>4)
+            {
+                target_pose.pose.position.x = current_pose.x + 0.5;
+            }
+            else if(average<1)
+            {
+                target_pose.pose.position.x = current_pose.x - 0.5;
+            }
             target_pose.pose.position.y = -8;
             target_pose.pose.position.z = 0;
             move_pub.publish(target_pose);           
         }
+
         //QR 검출 -> 동과 호수 => 401이면 옆으로가기, 402면 아래로 가기 시작
         //
 
