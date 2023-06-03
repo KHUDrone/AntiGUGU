@@ -14,6 +14,7 @@
 
 int step = 0;
 double average = 0;
+int cnt_clk=0;
 
 //publisher
 //geographic_msgs::GeoPoseStamped target_pose; //for global
@@ -86,9 +87,8 @@ void QR_cb(const geometry_msgs::PoseStamped msg ){
 
 void server_cb(const geometry_msgs::PoseStamped msg ){
 	server_data = msg.pose.position;
-	ROS_INFO("Current : %4.2f, Next : %4.2f, BIRD %4.2f\n",server_data.x, server_data.y, server_data.z);
+	ROS_INFO("HOME : %4.2f, Next : %4.2f, BIRD : %4.2f\n",server_data.x, server_data.y, server_data.z);
 }
-
 int main(int argc, char **argv)
 {
    ros::init(argc, argv, "pub_setpoints");
@@ -162,6 +162,7 @@ int main(int argc, char **argv)
    ros::Time last_request = ros::Time::now();
 
    while(ros::ok()){
+        
        ROS_INFO("Target(x,y,z): %4.2f, %4.2f, %4.2f\n",target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
        target_pose.header.stamp = ros::Time::now();
        target_pose.header.frame_id = 1;
@@ -191,7 +192,7 @@ int main(int argc, char **argv)
 				}
             }
 		else{
-
+        
         // 101 102 103
         // 201 202 203
         //     drone
@@ -224,7 +225,11 @@ int main(int argc, char **argv)
             target_pose.pose.position.y = 4;
             target_pose.pose.position.z = current_pose.z + 1.0;
             move_pub.publish(target_pose);
-            //QR detection func
+
+            //QR detected
+            if(QR_loc.x && QR_loc.y){
+                ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
+            }
             if(current_pose.z>=8.5){step=2;}
         }
 
@@ -242,7 +247,11 @@ int main(int argc, char **argv)
             target_pose.pose.position.z =8.5;
             move_pub.publish(target_pose);
             //QR detection func
-            if(current_pose.y<=-8){step=3;}
+             if(QR_loc.x && QR_loc.y){
+                ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
+            }
+
+            if(current_pose.y<=1.7){step=3;}
         }
 
         //go downside
@@ -255,10 +264,14 @@ int main(int argc, char **argv)
             {
                 target_pose.pose.position.x = current_pose.x - 0.5;
             }
-            target_pose.pose.position.y = -8;
+            target_pose.pose.position.y = 2;
             target_pose.pose.position.z = current_pose.z - 1.0;
             move_pub.publish(target_pose);
             //QR detection func
+             if(QR_loc.x && QR_loc.y){
+                ROS_INFO("HOME info : %4.2f,  BIRD Detected: %4.2f\n",server_data.x, server_data.z);
+            }
+            
             if(current_pose.z<= 1.5){step=4;}
         }
         
