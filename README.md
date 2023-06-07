@@ -3,8 +3,8 @@
 > 프로젝트 시작 : 2023.03 <br> <br>
 > 팀장: 경희대학교 전자공학과 ***이병찬***<br>
 > 팀원: 경희대학교  ***조홍찬, 권강환, 박광명***<br> 
->> &nbsp;&nbsp;&nbsp;서울과기대  ***박용석***<br>
->> &nbsp;&nbsp;&nbsp;대진대학교  ***장승민***<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;서울과기대  ***박용석***<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대진대학교  ***장승민***<br>
 
 ## 🥇 Goals
 
@@ -53,14 +53,26 @@
 ## 💻 Developers
 <div align="left">
     <table border="1">
+        <th><a href="https://github.com/chanbyeongee">이병찬</a></th>
         <th><a href="https://github.com/HeoYoon1">허윤</a></th>
         <th><a href="https://github.com/pangthing">박광명</a></th>
+        <th><a href="https://github.com/YAKDEEE">박용석</a></th>
+        <th><a href="https://github.com/zecube">장승민</a></th>
         <tr>
+            <td>
+                <img src="https://github.com/chanbyeongee.png" width='80' />
+            </td>
             <td>
                 <img src="https://github.com/HeoYoon1.png" width='80' />
             </td>
             <td>
                 <img src="https://github.com/pangthing.png" width='80' />
+            </td>
+            <td>
+                <img src="https://github.com/YAKDEEE.png" width='80' />
+            </td>
+            <td>
+                <img src="https://github.com/zecube.png" width='80' />
             </td>
         </tr>
     </table>
