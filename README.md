@@ -29,27 +29,6 @@
 <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white"> <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"> <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white">
 
 
-
-## ⚙️ Project Settings
-#### Install library dependencies
-
-```bash
->
-```
-
-#### Test AI Code
-
-```bash
->
-```
-
-## 📜 Feature
-> 현 문서에서는 자율비행에 대해서 다룹니다. 다른 기능의 설명은 해당 Submodule의 Wiki나 [**AI_Wiki_Specification**](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)을 참고해주세요.
-
-### 1. 자율비행
-
-
-
 ## 💻 Developers
 <div align="left">
     <table border="1">
@@ -75,21 +54,17 @@
                 <img src="https://github.com/zecube.png" width='80' />
             </td>
         </tr>
+        <th>서버/총괄</a></th>
+        <th>HW/주행</a></th>
+        <th>HW/인식</a></th>
+        <th>시뮬/주행</a></th>
+        <th>시뮬/LiDAR</a></th>
     </table>
 </div>
 
 
 
-## 📚 Documentations
+## Video
 
-### Open Source Github
-Preparing...
-
-### Wiki
-Preparing...
-
-## 🔒 LICENSE
-Preparing...
-
-
-
+[![Video Label](http://img.youtube.com/vi/4qDqUQ2kj_o/0.jpg)](https://youtu.be/4qDqUQ2kj_o)
+[![Video Label](http://img.youtube.com/vi/w27UE9WUlRE/0.jpg)](https://youtu.be/w27UE9WUlRE)
